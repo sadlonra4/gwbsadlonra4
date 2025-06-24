@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 const SongsSection = () => {
   const songs = [
     {
-      title: "Žalgiris Kaunas",
+      title: "TIK ŽALIOS GĖLĖS KRIS",
       lyrics:
-        "Žalgiris Kaunas, mes tave mylim\nVisada su tavim, niekad neapleiksim\nŽaliai balti spalvos širdyje gyvuoja\nKiekviename mače mes tavimi didžiuojamės",
+        "NĖRA PRASMĖS GYVENTI JEI TAVĘS NEMATAU,\nAŠ VISKĄ PAAUKOSIU - DAINUOSIU DAINAS TAU\nJEI TEKS MAN PASIRINKTI, AR TU, AR MAN MIRTIS\nTIKIUOS ANT MANO KAPO TIK ŽALIOS GĖLĖS KRIS.",
       duration: "2:30",
     },
     {
-      title: "Green White Boys",
+      title: "ŠIANDIEN YRA MŪSŲ DIENA",
       lyrics:
-        "Green White Boys, mes čia esam\nPalaikysim komandą visada\nNuo tribūnų iki aikštės\nMūsų balsas skambės garsiausiai",
+        "ŠIANDIEN YRA - MŪSŲ DIENA\nPERGALĖ MUMS RANKA PASIEKIAMA\nSKAMBA LINKSMAI, MŪSŲ DAINA\nŽALGIRIO VARDAS MŪSŲ ŠIRDYSE\nLALALA LAI LALALA LAI (3X)",
       duration: "1:45",
     },
     {
@@ -38,7 +38,7 @@ const SongsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gwb-white mb-4">
-            FANŲ <span className="text-gwb-black">DAINOS</span>
+            FANŲ <span className="text-lime-400">DAINOS</span>
           </h2>
           <p className="text-gwb-white text-lg max-w-2xl mx-auto">
             Klausykitės ir mokykitės mūsų dainų, kad galėtumėte dainuoti kartu
