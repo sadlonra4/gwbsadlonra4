@@ -19,6 +19,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
 import { useCart } from "@/contexts/CartContext";
+import CartNotification from "@/components/CartNotification";
 
 interface FilterState {
   priceRange: [number, number];
@@ -81,7 +82,7 @@ const Shop = () => {
       image:
         "https://cdn.builder.io/api/v1/image/assets%2F36c58a22022c4771b1fc6957762733ab%2F138f3ccbe18d4bfc870dc7379ba32825",
       description:
-        "24 skirtingų lipdukų rinkinys. Atsparūs orui ir vandeniui. 10x10 cm dydžio lipdukai.",
+        "24 skirtingų lipduk�� rinkinys. Atsparūs orui ir vandeniui. 10x10 cm dydžio lipdukai.",
       rating: 4.6,
       isNew: false,
       isPopular: false,
@@ -576,6 +577,9 @@ const Shop = () => {
           )}
         </div>
       </main>
+
+      {/* Cart Notification in Left Bottom Corner */}
+      <CartNotification />
     </div>
   );
 };
