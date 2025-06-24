@@ -7,7 +7,6 @@ import GallerySection from "@/components/GallerySection";
 import ContributeSection from "@/components/ContributeSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import CartNotification from "@/components/CartNotification";
 
 const Index = () => {
   return (
@@ -21,9 +20,6 @@ const Index = () => {
       <ContributeSection />
       <ContactSection />
       <Footer />
-
-      {/* Cart Notification for all sections */}
-      <CartNotification />
     </div>
   );
 };
