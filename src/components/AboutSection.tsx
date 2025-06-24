@@ -1,14 +1,22 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const AboutSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   return (
     <section id="about" className="py-20 bg-gwb-white bg-slate-50">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-in-left">
             <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gwb-black mb-6">
-              {t("aboutTitle")}
+              {language === "LT" ? (
+                <>
+                  APIE <span className="text-gwb-green">GREEN WHITE BOYS</span>
+                </>
+              ) : (
+                <>
+                  ABOUT <span className="text-gwb-green">GREEN WHITE BOYS</span>
+                </>
+              )}
             </h2>
 
             <div className="space-y-6 text-gwb-black">

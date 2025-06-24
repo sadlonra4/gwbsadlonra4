@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const SongsSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const songs = [
     {
       title: "TIK ŽALIOS GĖLĖS KRIS",
@@ -41,7 +41,10 @@ const SongsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gwb-white mb-4">
-            {t("fanChants")}
+            FANŲ{" "}
+            <span className="text-lime-400">
+              {language === "LT" ? "SKANDUOTĖS" : "CHANTS"}
+            </span>
           </h2>
           <p className="text-gwb-white text-lg max-w-2xl mx-auto">
             {t("fanChantsSubtitle")}
