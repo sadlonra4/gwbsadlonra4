@@ -2,7 +2,10 @@ import { Play, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const SongsSection = () => {
+  const { t } = useLanguage();
   const songs = [
     {
       title: "TIK ŽALIOS GĖLĖS KRIS",
@@ -38,11 +41,10 @@ const SongsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gwb-white mb-4">
-            FANŲ <span className="text-lime-400">DAINOS</span>
+            {t("fanChants")}
           </h2>
           <p className="text-gwb-white text-lg max-w-2xl mx-auto">
-            Klausykitės ir mokykitės mūsų dainų, kad galėtumėte dainuoti kartu
-            arenoje
+            {t("fanChantsSubtitle")}
           </p>
         </div>
 
@@ -88,7 +90,7 @@ const SongsSection = () => {
               className="bg-gwb-white hover:bg-gwb-white/80 text-gwb-black font-semibold border-2 border-gwb-black"
             >
               <Download size={20} className="mr-2" />
-              ATSISIŲSTI VISAS SKANDUOTES
+              {t("downloadAllChants")}
             </Button>
           </Link>
         </div>

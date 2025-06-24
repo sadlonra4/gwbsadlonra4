@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { toast } from "sonner";
 
 const ShopSection = () => {
   const { addToCart, isInCart, removeFromCart } = useCart();
+  const { t } = useLanguage();
 
   const handleAddToCart = (product: any) => {
     addToCart({
@@ -16,7 +18,7 @@ const ShopSection = () => {
       image: product.image,
       description: product.description,
     });
-    toast.success(`${product.name} pridėtas į krepšelį!`, {
+    toast.success(`${product.name} ${t("addedToCart")}`, {
       duration: 2000, // 2 seconds instead of default 4 seconds
     });
   };
@@ -76,10 +78,10 @@ const ShopSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gwb-black mb-4">
-            <span className="text-lime-400">GWB</span> PARDUOTUVĖ
+            {t("shopTitle")}
           </h2>
           <p className="text-gwb-black text-lg max-w-2xl mx-auto">
-            Rodykie savo palaikymą su oficialiais GWB produktais
+            {t("shopSubtitle")}
           </p>
         </div>
 
@@ -124,7 +126,7 @@ const ShopSection = () => {
                     }`}
                   >
                     <ShoppingCart size={16} className="mr-2" />
-                    {isInCart(product.id) ? "PAŠALINTI" : "PIRKTI"}
+                    {isInCart(product.id) ? t("remove") : t("buy")}
                   </Button>
                 </div>
               </CardContent>
@@ -140,7 +142,7 @@ const ShopSection = () => {
               className="border-lime-400 border-2 text-black hover:bg-lime-400 hover:text-black bg-transparent"
             >
               <span style={{ color: "rgb(0, 0, 0)" }}>
-                ŽIŪRĖTI VISUS PRODUKTUS
+                {t("viewAllProducts")}
               </span>
             </Button>
           </Link>

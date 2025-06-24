@@ -19,6 +19,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
 import { useCart } from "@/contexts/CartContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface FilterState {
   priceRange: [number, number];
@@ -38,6 +39,7 @@ const Shop = () => {
   });
 
   const { addToCart, removeFromCart, isInCart, cartCount } = useCart();
+  const { t } = useLanguage();
 
   const categories = [
     "Visi",
@@ -229,7 +231,7 @@ const Shop = () => {
               className="flex items-center text-gwb-white hover:text-gwb-green transition-colors"
             >
               <ArrowLeft className="mr-2" size={20} />
-              Grįžti į pagrindinį
+              {t("backToMain")}
             </Link>
             <h1 className="font-oswald text-2xl md:text-3xl font-bold text-gwb-white">
               <span className="text-gwb-green">GWB</span> PARDUOTUVĖ
