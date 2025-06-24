@@ -16,7 +16,9 @@ const ShopSection = () => {
       image: product.image,
       description: product.description,
     });
-    toast.success(`${product.name} pridėtas į krepšelį!`);
+    toast.success(`${product.name} pridėtas į krepšelį!`, {
+      duration: 2000, // 2 seconds instead of default 4 seconds
+    });
   };
 
   const products = [
