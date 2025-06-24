@@ -3,17 +3,19 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CartPage = () => {
   const { cartItems, updateQuantity, removeFromCart, clearCart, cartTotal } =
     useCart();
+  const { t } = useLanguage();
 
   if (cartItems.length === 0) {
     return (
       <section className="py-20 bg-gwb-white min-h-screen">
         <div className="container mx-auto px-4">
           <h2 className="font-oswald text-4xl font-bold text-gwb-black mb-8 text-center">
-            <ShoppingCart className="inline-block mr-2" /> Jūsų Krepšelis
+            <ShoppingCart className="inline-block mr-2" /> {t("yourCart")}
           </h2>
 
           <div className="text-center py-12">
@@ -21,17 +23,15 @@ const CartPage = () => {
               <ShoppingCart size={64} className="mx-auto" />
             </div>
             <h3 className="text-xl font-semibold text-gwb-black mb-2">
-              Jūsų krepšelis tuščias
+              {t("cartEmpty")}
             </h3>
-            <p className="text-gray-600 mb-6">
-              Pridėkite prekių į krepšelį, kad galėtumėte jas įsigyti
-            </p>
+            <p className="text-gray-600 mb-6">{t("cartEmptyMessage")}</p>
             <Link to="/parduotuve">
               <Button
                 size="lg"
                 className="bg-gwb-black text-gwb-white hover:bg-gwb-black/80"
               >
-                Eiti į parduotuvę
+                {t("goToShop")}
               </Button>
             </Link>
           </div>
@@ -44,7 +44,7 @@ const CartPage = () => {
     <section className="py-20 bg-gwb-white min-h-screen">
       <div className="container mx-auto px-4">
         <h2 className="font-oswald text-4xl font-bold text-gwb-black mb-8 text-center">
-          <ShoppingCart className="inline-block mr-2" /> Jūsų Krepšelis
+          <ShoppingCart className="inline-block mr-2" /> {t("yourCart")}
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -121,7 +121,7 @@ const CartPage = () => {
             <Card className="sticky top-4 border-2 border-gwb-black">
               <CardContent className="p-6">
                 <h3 className="font-oswald text-xl font-semibold text-gwb-black mb-4">
-                  Užsakymo santrauka
+                  {t("orderSummary")}
                 </h3>
 
                 <div className="space-y-2 mb-4">
@@ -143,7 +143,7 @@ const CartPage = () => {
 
                 <div className="border-t pt-4 mb-6">
                   <div className="flex justify-between text-lg font-bold">
-                    <span>Viso:</span>
+                    <span>{t("total")}</span>
                     <span className="text-lime-400">
                       {cartTotal.toFixed(2)}€
                     </span>
@@ -155,7 +155,7 @@ const CartPage = () => {
                     size="lg"
                     className="w-full bg-lime-400 text-gwb-black hover:bg-lime-500 font-semibold"
                   >
-                    PIRKTI DABAR
+                    {t("buyNow")}
                   </Button>
 
                   <Button
@@ -164,7 +164,7 @@ const CartPage = () => {
                     onClick={clearCart}
                     className="w-full border-red-500 text-red-500 hover:bg-red-50"
                   >
-                    Išvalyti krepšelį
+                    {t("clearCart")}
                   </Button>
                 </div>
               </CardContent>
@@ -179,7 +179,7 @@ const CartPage = () => {
               variant="outline"
               className="border-lime-400 border-2 text-black hover:bg-lime-400 hover:text-black"
             >
-              Tęsti apsipirkimą
+              {t("continueShopping")}
             </Button>
           </Link>
         </div>
