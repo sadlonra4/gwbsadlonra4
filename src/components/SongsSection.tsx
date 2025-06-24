@@ -17,15 +17,15 @@ const SongsSection = () => {
       duration: "1:45",
     },
     {
-      title: "Kauno Arena",
+      title: "ŠIANDIENĄ SUSIRINKOM - DĖL ŠIŲ SPALVŲ",
       lyrics:
-        "Kauno arena šiandien dūzgia\nFanų balsai dangų siekia\nŽalgiris kovoja, mes palaikome\nKartu mes - nepajudinami",
+        "ŠIANDIENĄ SUSIRINKOM - DĖL ŠIŲ SPALVŲ\nPASAULYJE GRAŽIAUSIŲ - ŽALIAI BALTŲ\nVISI KARTU DAINUOSIM - NES MUMS SVARBU\nO, ŽALGIRI, TU JUK ŽINAI - TAVE MYLIU",
       duration: "3:10",
     },
     {
-      title: "Ištikimybė",
+      title: "ATSISTOKITE VISI VISI",
       lyrics:
-        "Ištikimybė iki galo\nTai mūsų šventasis įžadas\nPer pergales ir pralaimėjimus\nSu Žalgiriu mes būsim visados",
+        "ATSISTOKITE VISI VISI,\nJEI PALAIKOT KAUNO ŽALGIRĮ\nREZULTATAS MUMS NĖRA SVARBUS\nNES PALAIKOME ŽALIAI BALTUS",
       duration: "2:15",
     },
   ];
@@ -88,7 +88,7 @@ const SongsSection = () => {
               className="bg-gwb-white hover:bg-gwb-white/80 text-gwb-black font-semibold border-2 border-gwb-black"
             >
               <Download size={20} className="mr-2" />
-              ATSISIŲSTI VISAS DAINAS
+              ATSISIŲSTI VISAS SKANDUOTES
             </Button>
           </Link>
         </div>
