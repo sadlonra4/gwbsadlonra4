@@ -20,7 +20,7 @@ const Header = () => {
     },
     {
       href: "#songs",
-      label: language === "LT" ? "Dainos" : "Songs",
+      label: language === "LT" ? "Skanduotės" : "Songs",
     },
     {
       href: "#shop",
