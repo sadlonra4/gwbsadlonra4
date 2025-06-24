@@ -1,0 +1,99 @@
+import { Play, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+const SongsSection = () => {
+  const songs = [
+    {
+      title: "Žalgiris Kaunas",
+      lyrics:
+        "Žalgiris Kaunas, mes tave mylim\nVisada su tavim, niekad neapleiksim\nŽaliai balti spalvos širdyje gyvuoja\nKiekviename mače mes tavimi didžiuojamės",
+      duration: "2:30",
+    },
+    {
+      title: "Green White Boys",
+      lyrics:
+        "Green White Boys, mes čia esam\nPalaikysim komandą visada\nNuo tribūnų iki aikštės\nMūsų balsas skambės garsiausiai",
+      duration: "1:45",
+    },
+    {
+      title: "Kauno Arena",
+      lyrics:
+        "Kauno arena šiandien dūzgia\nFanų balsai dangų siekia\nŽalgiris kovoja, mes palaikome\nKartu mes - nepajudinami",
+      duration: "3:10",
+    },
+    {
+      title: "Ištikimybė",
+      lyrics:
+        "Ištikimybė iki galo\nTai mūsų šventasis įžadas\nPer pergales ir pralaimėjimus\nSu Žalgiriu mes būsim visados",
+      duration: "2:15",
+    },
+  ];
+  return (
+    <section
+      id="songs"
+      className="py-20"
+      style={{ backgroundColor: "#062d16" }}
+    >
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gwb-white mb-4">
+            FANŲ <span className="text-gwb-black">DAINOS</span>
+          </h2>
+          <p className="text-gwb-white text-lg max-w-2xl mx-auto">
+            Klausykitės ir mokykitės mūsų dainų, kad galėtumėte dainuoti kartu
+            arenoje
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
+          {songs.map((song, index) => (
+            <Card
+              key={index}
+              className="bg-gwb-white border-gwb-black border-2 hover:border-gwb-black hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105"
+            >
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-oswald text-xl font-semibold text-gwb-black">
+                    {song.title}
+                  </h3>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-gwb-black text-sm">
+                      {song.duration}
+                    </span>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      className="text-gwb-green hover:text-gwb-white hover:bg-gwb-green bg-slate-50 font-normal text-lime-400"
+                    >
+                      <Play size={16} />
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="bg-gwb-black p-4 rounded-lg mb-4 bg-stone-800">
+                  <pre className="text-gwb-white text-sm whitespace-pre-line leading-relaxed">
+                    {song.lyrics}
+                  </pre>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Link to="/dainos">
+            <Button
+              size="lg"
+              className="bg-gwb-white hover:bg-gwb-white/80 text-gwb-black font-semibold border-2 border-gwb-black"
+            >
+              <Download size={20} className="mr-2" />
+              ATSISIŲSTI VISAS DAINAS
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
+export default SongsSection;
