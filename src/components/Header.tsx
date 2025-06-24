@@ -70,19 +70,6 @@ const Header = () => {
 
           {/* Social Icons & Language Toggle */}
           <div className="flex items-center space-x-4">
-            {/* Cart Icon */}
-            <Link
-              to="/cart"
-              className="text-gwb-white hover:text-gwb-green transition-colors relative"
-            >
-              <ShoppingCart size={20} />
-              {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-gwb-green text-gwb-black rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold">
-                  {cartCount}
-                </span>
-              )}
-            </Link>
-
             <div className="hidden md:flex items-center space-x-3">
               <a
                 href="https://www.instagram.com/greenwhiteboys/"
@@ -127,6 +114,19 @@ const Header = () => {
                 </svg>
               </a>
             </div>
+
+            {/* Cart Icon */}
+            <Link
+              to="/cart"
+              className="text-gwb-white hover:text-gwb-green transition-colors relative"
+            >
+              <ShoppingCart size={20} />
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-gwb-green text-gwb-black rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold">
+                  {cartCount}
+                </span>
+              )}
+            </Link>
 
             <Button
               variant="outline"
