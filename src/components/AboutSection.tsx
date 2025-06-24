@@ -19,12 +19,36 @@ const AboutSection = () => {
               )}
             </h2>
 
-            <div className="space-y-6 text-gwb-black">
-              <p className="text-lg leading-relaxed">{t("aboutP1")}</p>
-
-              <p className="text-lg leading-relaxed">{t("aboutP2")}</p>
-
-              <p className="text-lg leading-relaxed">{t("aboutP3")}</p>
+            <div className="text-gwb-black text-lg leading-relaxed">
+              <h5 style={{ textAlign: "justify" }}>
+                <br />
+              </h5>
+              <h5 style={{ textAlign: "justify" }}>
+                „Green White Boys" – ultras grupuotė iš Kauno, ištikimai
+                palaikanti Kauno „Žalgirio" krepšinio komandą. Mūsų grupuotė
+                susibūrė iš noro ne tik ištikimai palaikyti komandą kiekvienose
+                varžybose, bet ir kurti tikrą vienybės bei lojalumo jausmą tarp
+                „Žalgirio" sirgalių.
+              </h5>
+              <h5 style={{ textAlign: "justify" }}>
+                <br />
+              </h5>
+              <h5 style={{ textAlign: "justify" }}>
+                Mūsų pasirodymuose galima išvysti ir choreografinių vaizdinių,
+                kuriems skiriame daug laiko ir pastangų. Visa tai kuriama tam,
+                kad palaikyme jaustųsi energija ir būtų jaučiamas
+                nenutrūkstantis palaikymas „Žalgiriui".
+              </h5>
+              <h5 style={{ textAlign: "justify" }}>
+                <br />
+              </h5>
+              <h5 style={{ textAlign: "justify" }}>
+                Tikslas – būti aktyviems ne tik namų varžybose, tačiau ir
+                išvykose, nesvarbu Lietuvoje ar užsienyje. Mūsų veikla
+                nesibaigia vien tik varžybų metu - organizuojame bendrus
+                renginius ir akcijas, kurios stiprina bendruomenės jausmą tarp
+                „Žalgirio" gerbėjų, skatina patriotizmą ir solidarumą.
+              </h5>
             </div>
 
             <div className="mt-8 grid grid-cols-3 gap-6">
