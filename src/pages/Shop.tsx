@@ -546,7 +546,7 @@ const Shop = () => {
                       }`}
                     >
                       <ShoppingCart className="mr-2" size={16} />
-                      {isInCart(product.id) ? "PAŠALINTI" : "Į KREPŠELĮ"}
+                      {isInCart(product.id) ? t("remove") : t("buy")}
                     </Button>
                   </CardContent>
                 </Card>
