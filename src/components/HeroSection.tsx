@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   return (
     <section
       id="home"
@@ -20,7 +20,17 @@ const HeroSection = () => {
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="animate-fade-in">
           <h1 className="font-oswald text-5xl md:text-7xl lg:text-8xl font-bold text-gwb-white mb-6 leading-tight">
-            {t("heroTitle")}
+            {language === "LT" ? (
+              <>
+                <span className="text-gwb-green">ŽALIAI</span> BALTA&nbsp;
+                <span className="text-gwb-green">AISTRA</span>
+              </>
+            ) : (
+              <>
+                <span className="text-gwb-green">GREEN</span> WHITE&nbsp;
+                <span className="text-gwb-green">PASSION</span>
+              </>
+            )}
           </h1>
 
           <p className="text-xl md:text-2xl text-gwb-white mb-8 max-w-2xl mx-auto">

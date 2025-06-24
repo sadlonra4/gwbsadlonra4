@@ -8,7 +8,7 @@ import { toast } from "sonner";
 
 const ShopSection = () => {
   const { addToCart, isInCart, removeFromCart } = useCart();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const handleAddToCart = (product: any) => {
     addToCart({
@@ -78,7 +78,8 @@ const ShopSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gwb-black mb-4">
-            {t("shopTitle")}
+            <span className="text-lime-400">GWB</span>{" "}
+            {language === "LT" ? "PARDUOTUVĖ" : "SHOP"}
           </h2>
           <p className="text-gwb-black text-lg max-w-2xl mx-auto">
             {t("shopSubtitle")}
