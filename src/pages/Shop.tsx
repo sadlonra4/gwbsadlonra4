@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/popover";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
+import { useCart } from "@/contexts/CartContext";
 
 interface FilterState {
   priceRange: [number, number];
@@ -28,7 +29,6 @@ interface FilterState {
 
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState("Visi");
-  const [cartItems, setCartItems] = useState<number[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filters, setFilters] = useState<FilterState>({
     priceRange: [0, 50],
@@ -36,6 +36,8 @@ const Shop = () => {
     showNew: false,
     showPopular: false,
   });
+
+  const { addToCart, removeFromCart, isInCart, cartCount } = useCart();
 
   const categories = [
     "Visi",
@@ -183,15 +185,15 @@ const Shop = () => {
     );
   });
 
-  const addToCart = (productId: number) => {
-    setCartItems([...cartItems, productId]);
+  const handleAddToCart = (product: any) => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      description: product.description,
+    });
   };
-
-  const removeFromCart = (productId: number) => {
-    setCartItems(cartItems.filter((id) => id !== productId));
-  };
-
-  const isInCart = (productId: number) => cartItems.includes(productId);
 
   const resetFilters = () => {
     setFilters({
@@ -232,12 +234,15 @@ const Shop = () => {
             <h1 className="font-oswald text-2xl md:text-3xl font-bold text-gwb-white">
               <span className="text-gwb-green">GWB</span> PARDUOTUVĖ
             </h1>
-            <div className="flex items-center text-gwb-white">
+            <Link
+              to="/cart"
+              className="flex items-center text-gwb-white hover:text-gwb-green transition-colors"
+            >
               <ShoppingCart className="mr-2" size={20} />
               <span className="bg-gwb-green text-gwb-black rounded-full px-2 py-1 text-sm font-bold">
-                {cartItems.length}
+                {cartCount}
               </span>
-            </div>
+            </Link>
           </div>
         </div>
       </header>
@@ -522,11 +527,6 @@ const Shop = () => {
                         <span className="text-xl font-bold text-gwb-black">
                           {product.price}
                         </span>
-                        {product.originalPrice && (
-                          <span className="text-sm text-gray-500 line-through ml-2">
-                            {product.originalPrice}
-                          </span>
-                        )}
                       </div>
                     </div>
 
@@ -535,7 +535,7 @@ const Shop = () => {
                       onClick={() =>
                         isInCart(product.id)
                           ? removeFromCart(product.id)
-                          : addToCart(product.id)
+                          : handleAddToCart(product)
                       }
                       className={`w-full font-semibold ${
                         isInCart(product.id)
@@ -553,24 +553,24 @@ const Shop = () => {
           )}
 
           {/* Cart Summary */}
-          {cartItems.length > 0 && (
+          {cartCount > 0 && (
             <div className="fixed bottom-6 right-6 bg-gwb-black text-gwb-white p-4 rounded-lg shadow-lg">
               <div className="flex items-center space-x-4">
                 <div>
-                  <p className="font-semibold">
-                    Krepšelis: {cartItems.length} prekės
-                  </p>
+                  <p className="font-semibold">Krepšelis: {cartCount} prekės</p>
                   <p className="text-sm opacity-75">
                     Spustelėkite, kad peržiūrėtumėte
                   </p>
                 </div>
-                <Button
-                  size="sm"
-                  style={{ backgroundColor: "#a3e635" }}
-                  className="text-gwb-black"
-                >
-                  PERŽIŪRĖTI
-                </Button>
+                <Link to="/cart">
+                  <Button
+                    size="sm"
+                    style={{ backgroundColor: "#a3e635" }}
+                    className="text-gwb-black"
+                  >
+                    PERŽIŪRĖTI
+                  </Button>
+                </Link>
               </div>
             </div>
           )}

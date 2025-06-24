@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { useCart } from "@/contexts/CartContext";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [language, setLanguage] = useState("LT");
+  const { cartCount } = useCart();
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleLanguage = () => setLanguage(language === "LT" ? "EN" : "LT");
   const menuItems = [
@@ -67,6 +70,19 @@ const Header = () => {
 
           {/* Social Icons & Language Toggle */}
           <div className="flex items-center space-x-4">
+            {/* Cart Icon */}
+            <Link
+              to="/cart"
+              className="text-gwb-white hover:text-gwb-green transition-colors relative"
+            >
+              <ShoppingCart size={20} />
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-gwb-green text-gwb-black rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold">
+                  {cartCount}
+                </span>
+              )}
+            </Link>
+
             <div className="hidden md:flex items-center space-x-3">
               <a
                 href="https://www.instagram.com/greenwhiteboys/"
