@@ -61,7 +61,16 @@ const AboutSection = () => {
                 alt="GWB Fans"
                 className="w-full h-96 object-cover rounded-lg shadow-2xl border-4 border-gwb-green"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-gwb-black/50 to-transparent rounded-lg bg-green-950"></div>
+              <div
+                className="absolute inset-0 rounded-lg"
+                style={{
+                  backgroundImage:
+                    "url('https://cdn.builder.io/api/v1/image/assets%2Ffb2feadbb4494ac89f67fc7ee22e1642%2F13b482833ea04728ae37639778155aad')",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+              ></div>
               <div className="absolute bottom-4 left-4 right-4 bg-gwb-green/90 p-3 rounded bg-lime-400">
                 <p className="text-gwb-white font-oswald text-xl font-semibold text-center text-zinc-950">
                   KARTU MES - JĖGA
