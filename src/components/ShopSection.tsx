@@ -2,7 +2,23 @@ import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { useCart } from "@/contexts/CartContext";
+import { toast } from "sonner";
+
 const ShopSection = () => {
+  const { addToCart, isInCart, removeFromCart } = useCart();
+
+  const handleAddToCart = (product: any) => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      description: product.description,
+    });
+    toast.success(`${product.name} pridėtas į krepšelį!`);
+  };
+
   const products = [
     {
       id: 1,
@@ -94,10 +110,19 @@ const ShopSection = () => {
                   </span>
                   <Button
                     size="sm"
-                    className="bg-gwb-green hover:bg-gwb-green/80 text-gwb-white font-semibold bg-lime-500 hover:bg-lime-400"
+                    onClick={() =>
+                      isInCart(product.id)
+                        ? removeFromCart(product.id)
+                        : handleAddToCart(product)
+                    }
+                    className={`font-semibold ${
+                      isInCart(product.id)
+                        ? "bg-red-500 hover:bg-red-600 text-white"
+                        : "bg-lime-500 hover:bg-lime-400 text-gwb-white"
+                    }`}
                   >
                     <ShoppingCart size={16} className="mr-2" />
-                    PIRKTI
+                    {isInCart(product.id) ? "PAŠALINTI" : "PIRKTI"}
                   </Button>
                 </div>
               </CardContent>
