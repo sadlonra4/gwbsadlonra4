@@ -3,40 +3,40 @@ import { Menu, X, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language, setLanguage] = useState("LT");
   const { cartCount } = useCart();
+  const { language, toggleLanguage, t } = useLanguage();
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleLanguage = () => setLanguage(language === "LT" ? "EN" : "LT");
   const menuItems = [
     {
       href: "#home",
-      label: language === "LT" ? "Pradžia" : "Home",
+      label: t("home"),
     },
     {
       href: "#about",
-      label: language === "LT" ? "Apie GWB" : "About GWB",
+      label: t("aboutGWB"),
     },
     {
       href: "#songs",
-      label: language === "LT" ? "Skanduotės" : "Songs",
+      label: t("chants"),
     },
     {
       href: "#shop",
-      label: language === "LT" ? "Parduotuvė" : "Shop",
+      label: t("shop"),
     },
     {
       href: "#gallery",
-      label: language === "LT" ? "Galerija" : "Gallery",
+      label: t("gallery"),
     },
     {
       href: "#contribute",
-      label: language === "LT" ? "Prisidėk" : "Contribute",
+      label: t("contribute"),
     },
     {
       href: "#contact",
-      label: language === "LT" ? "Kontaktai" : "Contact",
+      label: t("contact"),
     },
   ];
   return (

@@ -1,5 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const HeroSection = () => {
+  const { t } = useLanguage();
   return (
     <section
       id="home"
@@ -17,12 +20,11 @@ const HeroSection = () => {
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="animate-fade-in">
           <h1 className="font-oswald text-5xl md:text-7xl lg:text-8xl font-bold text-gwb-white mb-6 leading-tight">
-            <span className="text-gwb-green">ŽALIAI</span> BALTA&nbsp;
-            <span className="text-gwb-green">AISTRA</span>
+            {t("heroTitle")}
           </h1>
 
           <p className="text-xl md:text-2xl text-gwb-white mb-8 max-w-2xl mx-auto">
-            Oficialus Kauno „Žalgirio" fanų klubas. Ištikimybė iki galo.
+            {t("heroSubtitle")}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -31,7 +33,7 @@ const HeroSection = () => {
                 size="lg"
                 className="bg-gwb-green hover:bg-gwb-green/80 text-gwb-black font-semibold px-8 py-3 text-lg bg-lime-500 hover:bg-lime-400"
               >
-                PRISIJUNK PRIE MŪSŲ
+                {t("joinUs")}
               </Button>
             </a>
             <a href="#shop">
@@ -40,7 +42,7 @@ const HeroSection = () => {
                 size="lg"
                 className="border-gwb-white text-gwb-white hover:bg-gwb-white hover:text-gwb-black px-8 py-3 text-lg text-zinc-950"
               >
-                PARDUOTUVĖ
+                {t("shopButton")}
               </Button>
             </a>
           </div>
