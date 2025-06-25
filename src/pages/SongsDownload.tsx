@@ -14,7 +14,7 @@ const SongsDownload = () => {
       songs: ["Žalgirio himnas", "Green White Boys", "Mes esam Žalgiris"],
     },
     {
-      title: "Palaikymo dainos",
+      title: "Palaikymo skanduotės",
       count: 15,
       songs: [
         "Mes einam į pergalę",
@@ -25,7 +25,7 @@ const SongsDownload = () => {
       ],
     },
     {
-      title: "Choreografijos dainos",
+      title: "Choreografijos skanduotės",
       count: 8,
       songs: [
         "Arena drebės",
@@ -35,11 +35,11 @@ const SongsDownload = () => {
       ],
     },
     {
-      title: "Klasikinės dainos",
+      title: "Klasikinės skanduotės",
       count: 12,
       songs: [
         "Seni gerieji",
-        "Tradicijos dainos",
+        "Tradicijos skanduotės",
         "Istoriniai hitai",
         "Legendinės melodijos",
       ],
@@ -70,7 +70,7 @@ const SongsDownload = () => {
               Grįžti į pagrindinį
             </Link>
             <h1 className="font-oswald text-2xl md:text-3xl font-bold text-gwb-white">
-              <span className="text-gwb-green">DAINOS</span> ATSISIUNTIMAS
+              <span className="text-gwb-green">skanduotės</span> ATSISIUNTIMAS
             </h1>
           </div>
         </div>
@@ -88,11 +88,11 @@ const SongsDownload = () => {
                 style={{ color: "#a3e635" }}
               />
               <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gwb-black mb-4">
-                VISOS GWB DAINOS
+                VISOS GWB skanduotės
               </h2>
               <p className="text-gwb-black text-lg max-w-2xl mx-auto">
                 Atsisiųsk visą GWB dainų kolekciją ir dainuok kartu su mumis
-                arenoje! Čia rasite visus himnus, palaikymo dainas ir
+                arenoje! Čia rasite visus himnus, palaikymo skanduotes ir
                 choreografijų melodijas.
               </p>
             </div>
@@ -106,7 +106,7 @@ const SongsDownload = () => {
               style={{ backgroundColor: downloadStarted ? "#666" : undefined }}
             >
               <Download size={24} className="mr-3" />
-              {downloadStarted ? "ATSISIUNČIAMA..." : "ATSISIŲSTI VISAS DAINAS"}
+              {downloadStarted ? "ATSISIUNČIAMA..." : "ATSISIŲSTI VISAS skanduotes"}
             </Button>
 
             {downloadStarted && (
