@@ -97,7 +97,7 @@ const ContributeSection = () => {
           </div>
 
           <div className="mt-8 text-sm text-gwb-white">
-            <p>Atsiskaitymas saugus per banko pavedimą arba PayPal</p>
+            <p>Atsiskaitymas saugus per banko pavedimą arba contribee</p>
           </div>
         </div>
       </div>
