@@ -45,6 +45,8 @@ const ProductDetailModal = ({
   const [selectedSize, setSelectedSize] = useState<string>("");
   const [selectedColor, setSelectedColor] = useState<string>("");
   const [quantity, setQuantity] = useState(1);
+  const [isImageZoomed, setIsImageZoomed] = useState(false);
+  const [imageScale, setImageScale] = useState(1);
   const { addToCart } = useCart();
   const { t } = useLanguage();
 
