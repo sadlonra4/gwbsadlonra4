@@ -123,7 +123,7 @@ const Shop = () => {
       image:
         "https://cdn.builder.io/api/v1/image/assets%2F36c58a22022c4771b1fc6957762733ab%2Fe688a1b5804e4f88813d3618eea10c4e",
       description:
-        "��iltas Oficialus Green White Boys medvilninis džemperis su kapišonu.",
+        "Šiltas Oficialus Green White Boys medvilninis džemperis su kapišonu.",
       rating: 4.9,
       isNew: true,
       isPopular: true,
@@ -173,6 +173,7 @@ const Shop = () => {
       isNew: false,
       isPopular: false,
       type: "sticker",
+      isSoldOut: true,
     },
     // New Lithuanian products
     {
