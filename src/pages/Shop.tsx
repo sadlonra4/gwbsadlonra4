@@ -21,6 +21,7 @@ import { Slider } from "@/components/ui/slider";
 import { useCart } from "@/contexts/CartContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import CartSummary from "@/components/CartSummary";
+import ProductDetailModal, { Product } from "@/components/ProductDetailModal";
 
 interface FilterState {
   priceRange: [number, number];
@@ -32,6 +33,8 @@ interface FilterState {
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState("Visi");
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [filters, setFilters] = useState<FilterState>({
     priceRange: [0, 50],
     minRating: 0,
@@ -50,7 +53,8 @@ const Shop = () => {
     "Naujienos",
   ];
 
-  const products = [
+  const products: Product[] = [
+    // Existing products with extended interface
     {
       id: 1,
       name: '"KAUNAS" MEGZTINIS BE KAPIŠONO',
@@ -63,6 +67,9 @@ const Shop = () => {
       rating: 4.8,
       isNew: false,
       isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Juoda"],
     },
     {
       id: 2,
@@ -75,6 +82,9 @@ const Shop = () => {
       rating: 4.9,
       isNew: true,
       isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta"],
     },
     {
       id: 3,
@@ -88,6 +98,7 @@ const Shop = () => {
       rating: 4.6,
       isNew: false,
       isPopular: false,
+      type: "sticker",
     },
     {
       id: 4,
@@ -100,6 +111,9 @@ const Shop = () => {
       rating: 4.7,
       isNew: false,
       isPopular: false,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Juoda"],
     },
     {
       id: 5,
@@ -113,6 +127,9 @@ const Shop = () => {
       rating: 4.9,
       isNew: true,
       isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Juoda"],
     },
     {
       id: 6,
@@ -126,6 +143,9 @@ const Shop = () => {
       rating: 4.5,
       isNew: false,
       isPopular: false,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Juoda"],
     },
     {
       id: 7,
@@ -138,6 +158,7 @@ const Shop = () => {
       rating: 4.8,
       isNew: true,
       isPopular: true,
+      type: "accessory",
     },
     {
       id: 8,
@@ -151,6 +172,165 @@ const Shop = () => {
       rating: 4.4,
       isNew: false,
       isPopular: false,
+      type: "sticker",
+    },
+    // New Lithuanian products
+    {
+      id: 9,
+      name: 'LIPDUKAI "2007"',
+      price: "5€",
+      category: "Aksesuarai",
+      image:
+        "https://cdn.builder.io/api/v1/image/assets%2F36c58a22022c4771b1fc6957762733ab%2F138f3ccbe18d4bfc870dc7379ba32825",
+      description:
+        "Kolekcinis lipdukų rinkinys su 2007 metų simbolika. Atsparūs orui ir vandeniui.",
+      rating: 4.7,
+      isNew: false,
+      isPopular: true,
+      type: "sticker",
+      isSoldOut: true,
+    },
+    {
+      id: 10,
+      name: '"ŽALGIRIS SKYDAS" MARŠKINĖLIAI (MOTERIŠKI)',
+      price: "8€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=400&auto=format&fit=crop",
+      description:
+        "Moteriški marškinėliai su Žalgirio skydo simbolika. Išskirtinis dizainas.",
+      rating: 4.6,
+      isNew: false,
+      isPopular: false,
+      type: "clothing",
+      sizes: ["XS", "S", "M", "L", "XL"],
+      colors: ["Žalia", "Balta"],
+    },
+    {
+      id: 11,
+      name: '"ŽALIAI BALTA AISTRA" MEGZTINIS BE KAPIŠONO',
+      price: "30€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400&auto=format&fit=crop",
+      description:
+        "Stilingas megztinis be kapišono su žaliai baltos aistros simbolika.",
+      rating: 4.8,
+      isNew: true,
+      isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Žalia-Balta"],
+    },
+    {
+      id: 12,
+      name: '"ŽALIAI BALTA AISTRA" DŽEMPERIS',
+      price: "40€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400&auto=format&fit=crop",
+      description:
+        "Šiltas džemperis su kapišonu ir žaliai baltos aistros simbolika.",
+      rating: 4.9,
+      isNew: true,
+      isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Žalia-Balta"],
+    },
+    {
+      id: 13,
+      name: '"ŽALIAI BALTAS IKI KAULŲ SMEGENŲ" DŽEMPERIS',
+      price: "40€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400&auto=format&fit=crop",
+      description:
+        "Išskirtinis džemperis tikram žaliai baltam fanui. Su kapišonu.",
+      rating: 4.9,
+      isNew: false,
+      isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Žalia-Balta"],
+    },
+    {
+      id: 14,
+      name: '"ŽALIAI BALTA AISTRA" MARŠKINĖLIAI',
+      price: "20€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=400&auto=format&fit=crop",
+      description:
+        "Klasikiniai marškinėliai su žaliai baltos aistros simbolika.",
+      rating: 4.7,
+      isNew: false,
+      isPopular: false,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Žalia-Balta"],
+    },
+    {
+      id: 15,
+      name: '"ŽALIAI BALTAS IKI KAULŲ SMEGENŲ" MARŠKINĖLIAI',
+      price: "20€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=400&auto=format&fit=crop",
+      description: "Marškinėliai tikram žaliai baltam fanui iki kaulų smegenų.",
+      rating: 4.8,
+      isNew: false,
+      isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Žalia-Balta"],
+    },
+    {
+      id: 16,
+      name: '"KAUNAS" MARŠKINĖLIAI',
+      price: "20€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=400&auto=format&fit=crop",
+      description:
+        "Marškinėliai su Kauno simbolika. Puikus pasirinkimas miesto patriotams.",
+      rating: 4.6,
+      isNew: false,
+      isPopular: false,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta"],
+    },
+    {
+      id: 17,
+      name: '"1410 / 1944" MARŠKINĖLIAI',
+      price: "20€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=400&auto=format&fit=crop",
+      description: "Istoriniai marškinėliai su svarbiausių metų simbolika.",
+      rating: 4.7,
+      isNew: false,
+      isPopular: false,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Juoda"],
+    },
+    {
+      id: 18,
+      name: '"ŽALIAI BALTAS IKI KAULŲ SMEGENŲ" MEGZTINIS BE KAPIŠONO',
+      price: "30€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400&auto=format&fit=crop",
+      description:
+        "Megztinis be kapišono tikram žaliai baltam fanui iki kaulų smegenų.",
+      rating: 4.8,
+      isNew: false,
+      isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Žalia-Balta"],
     },
   ];
 
@@ -187,6 +367,16 @@ const Shop = () => {
       matchesPopular
     );
   });
+
+  const handleProductClick = (product: Product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
 
   const handleAddToCart = (product: any) => {
     addToCart({
@@ -476,16 +666,26 @@ const Shop = () => {
               {filteredProducts.map((product) => (
                 <Card
                   key={product.id}
-                  className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300 group flex flex-col"
+                  className={`border-2 border-gwb-black hover:shadow-lg transition-all duration-300 group flex flex-col cursor-pointer ${
+                    product.isSoldOut ? "opacity-75" : ""
+                  }`}
+                  onClick={() => handleProductClick(product)}
                 >
                   <div className="relative flex flex-col">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="h-60 object-cover mx-auto"
+                      className={`h-60 object-cover mx-auto ${
+                        product.isSoldOut ? "grayscale" : ""
+                      }`}
                       style={{ width: product.id === 8 ? "263px" : "69%" }}
                     />
-                    {product.isNew && (
+                    {product.isSoldOut && (
+                      <span className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs font-bold rounded">
+                        IŠPARDUOTA
+                      </span>
+                    )}
+                    {product.isNew && !product.isSoldOut && (
                       <span className="absolute top-2 left-2 bg-gwb-green text-gwb-black px-2 py-1 text-xs font-bold rounded">
                         NAUJA
                       </span>
@@ -533,21 +733,41 @@ const Shop = () => {
                       </div>
                     </div>
 
-                    {/* Add to Cart Button */}
+                    {/* Add to Cart Button or Quick Buy */}
                     <Button
-                      onClick={() =>
-                        isInCart(product.id)
-                          ? removeFromCart(product.id)
-                          : handleAddToCart(product)
-                      }
+                      onClick={(e) => {
+                        e.stopPropagation(); // Prevent card click
+                        if (product.isSoldOut) return;
+
+                        if (product.type === "clothing") {
+                          // For clothing, open modal
+                          handleProductClick(product);
+                        } else {
+                          // For non-clothing, direct add to cart
+                          if (isInCart(product.id)) {
+                            removeFromCart(product.id);
+                          } else {
+                            handleAddToCart(product);
+                          }
+                        }
+                      }}
+                      disabled={product.isSoldOut}
                       className={`w-full font-semibold ${
-                        isInCart(product.id)
-                          ? "bg-red-500 hover:bg-red-600 text-white"
-                          : "bg-gwb-black hover:bg-gwb-black/80 text-gwb-white"
+                        product.isSoldOut
+                          ? "bg-gray-400 cursor-not-allowed"
+                          : isInCart(product.id)
+                            ? "bg-red-500 hover:bg-red-600 text-white"
+                            : "bg-gwb-black hover:bg-gwb-black/80 text-gwb-white"
                       }`}
                     >
                       <ShoppingCart className="mr-2" size={16} />
-                      {isInCart(product.id) ? t("remove") : t("buy")}
+                      {product.isSoldOut
+                        ? "IŠPARDUOTA"
+                        : product.type === "clothing"
+                          ? "Pasirinkti"
+                          : isInCart(product.id)
+                            ? t("remove")
+                            : t("buy")}
                     </Button>
                   </CardContent>
                 </Card>
@@ -556,6 +776,13 @@ const Shop = () => {
           )}
         </div>
       </main>
+
+      {/* Product Detail Modal */}
+      <ProductDetailModal
+        product={selectedProduct}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
 
       {/* Cart Summary - appears when items are in cart */}
       <CartSummary />
