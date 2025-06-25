@@ -71,21 +71,7 @@ const Shop = () => {
       sizes: ["S", "M", "L", "XL", "XXL"],
       colors: ["Žalia", "Balta", "Juoda"],
     },
-    {
-      id: 2,
-      name: "Žalgiris Marškinėliai",
-      price: "35€",
-      category: "Drabužiai",
-      image:
-        "https://images.unsplash.com/photo-1527576539890-dfa815648363?q=80&w=400&auto=format&fit=crop",
-      description: "Premium kokybės marškinėliai su GWB logo. 100% medvilnė.",
-      rating: 4.9,
-      isNew: true,
-      isPopular: true,
-      type: "clothing",
-      sizes: ["S", "M", "L", "XL", "XXL"],
-      colors: ["Žalia", "Balta"],
-    },
+
     {
       id: 3,
       name: 'LIPDUKAI "KAUNAS"',
