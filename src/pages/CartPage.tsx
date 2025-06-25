@@ -1,4 +1,4 @@
-import { ShoppingCart, Plus, Minus, Trash2 } from "lucide-react";
+import { ShoppingCart, Plus, Minus, Trash2, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -173,15 +173,27 @@ const CartPage = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Link to="/parduotuve">
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-lime-400 border-2 text-black hover:bg-lime-400 hover:text-black"
-            >
-              {t("continueShopping")}
-            </Button>
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-gwb-green border-2 text-gwb-black hover:bg-gwb-green hover:text-gwb-black flex items-center"
+              >
+                <Home className="mr-2" size={20} />
+                {t("home")}
+              </Button>
+            </Link>
+            <Link to="/parduotuve">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-lime-400 border-2 text-black hover:bg-lime-400 hover:text-black"
+              >
+                {t("continueShopping")}
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
