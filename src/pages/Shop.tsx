@@ -228,7 +228,7 @@ const Shop = () => {
       price: "40€",
       category: "Drabužiai",
       image:
-        "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400&auto=format&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F4d7630b5e3a14f56b7912290781a1e6e",
       description:
         "Šiltas džemperis su kapišonu ir žaliai baltos aistros simbolika.",
       rating: 4.9,
