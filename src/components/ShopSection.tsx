@@ -78,8 +78,9 @@ const ShopSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gwb-black mb-4">
-            <span className="text-lime-400">GWB</span>{" "}
-            {language === "LT" ? "PARDUOTUVĖ" : "SHOP"}
+            <span className="text-lime-400">
+              GWB <span style={{ color: "rgb(0, 0, 0)" }}>PARDUOTUVĖ</span>
+            </span>
           </h2>
           <p className="text-gwb-black text-lg max-w-2xl mx-auto">
             {t("shopSubtitle")}

@@ -61,13 +61,13 @@ class InstagramService {
     const fallbackImages = [
       "https://cdn.builder.io/api/v1/image/assets%2Ffb2feadbb4494ac89f67fc7ee22e1642%2F13b482833ea04728ae37639778155aad",
       "https://cdn.builder.io/api/v1/image/assets%2Ffb2feadbb4494ac89f67fc7ee22e1642%2Fdeda45a23eb648d183c7d59011475495",
-      "https://images.unsplash.com/photo-1527576539890-dfa815648363?q=80&w=600&auto=format&fit=crop",
+      "https://cdn.builder.io/api/v1/image/assets%2Ffb2feadbb4494ac89f67fc7ee22e1642%2F0b7f3661cfb2406f980902501da90171",
       "https://cdn.builder.io/api/v1/image/assets%2Ffb2feadbb4494ac89f67fc7ee22e1642%2F13b482833ea04728ae37639778155aad",
       "https://cdn.builder.io/api/v1/image/assets%2Ffb2feadbb4494ac89f67fc7ee22e1642%2Fdeda45a23eb648d183c7d59011475495",
-      "https://images.unsplash.com/photo-1527576539890-dfa815648363?q=80&w=600&auto=format&fit=crop",
+      "https://cdn.builder.io/api/v1/image/assets%2Ffb2feadbb4494ac89f67fc7ee22e1642%2F0b7f3661cfb2406f980902501da90171",
       "https://cdn.builder.io/api/v1/image/assets%2Ffb2feadbb4494ac89f67fc7ee22e1642%2F13b482833ea04728ae37639778155aad",
       "https://cdn.builder.io/api/v1/image/assets%2Ffb2feadbb4494ac89f67fc7ee22e1642%2Fdeda45a23eb648d183c7d59011475495",
-      "https://images.unsplash.com/photo-1527576539890-dfa815648363?q=80&w=600&auto=format&fit=crop",
+      "https://cdn.builder.io/api/v1/image/assets%2Ffb2feadbb4494ac89f67fc7ee22e1642%2F0b7f3661cfb2406f980902501da90171",
     ];
 
     return fallbackImages.map((url, index) => ({
