@@ -26,14 +26,26 @@ const CartPage = () => {
               {t("cartEmpty")}
             </h3>
             <p className="text-gray-600 mb-6">{t("cartEmptyMessage")}</p>
-            <Link to="/parduotuve">
-              <Button
-                size="lg"
-                className="bg-gwb-black text-gwb-white hover:bg-gwb-black/80"
-              >
-                {t("goToShop")}
-              </Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-gwb-green border-2 text-gwb-black hover:bg-gwb-green hover:text-gwb-black flex items-center"
+                >
+                  <Home className="mr-2" size={20} />
+                  {t("home")}
+                </Button>
+              </Link>
+              <Link to="/parduotuve">
+                <Button
+                  size="lg"
+                  className="bg-gwb-black text-gwb-white hover:bg-gwb-black/80"
+                >
+                  {t("goToShop")}
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
