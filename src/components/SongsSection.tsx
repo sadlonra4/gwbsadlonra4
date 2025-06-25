@@ -41,9 +41,16 @@ const SongsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gwb-white mb-4">
-            FANŲ{" "}
+            <span>
+              <p>
+                FANŲ{" "}
+                <span style={{ color: "rgb(126, 211, 33)" }}>SKANDUOTĖS</span>
+              </p>
+            </span>
             <span className="text-lime-400">
-              {language === "LT" ? "SKANDUOTĖS" : "CHANTS"}
+              <p>
+                <br />
+              </p>
             </span>
           </h2>
           <p className="text-gwb-white text-lg max-w-2xl mx-auto">
