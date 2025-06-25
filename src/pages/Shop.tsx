@@ -212,7 +212,7 @@ const Shop = () => {
       price: "30€",
       category: "Drabužiai",
       image:
-        "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400&auto=format&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F24f2a69f231b4aae8bfa77805c61bfbf",
       description:
         "Stilingas megztinis be kapišono su žaliai baltos aistros simbolika.",
       rating: 4.8,
