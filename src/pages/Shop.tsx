@@ -777,6 +777,13 @@ const Shop = () => {
         </div>
       </main>
 
+      {/* Product Detail Modal */}
+      <ProductDetailModal
+        product={selectedProduct}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
+
       {/* Cart Summary - appears when items are in cart */}
       <CartSummary />
     </div>
