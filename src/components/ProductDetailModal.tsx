@@ -54,6 +54,25 @@ const ProductDetailModal = ({
     setSelectedSize("");
     setSelectedColor("");
     setQuantity(1);
+    setIsImageZoomed(false);
+    setImageScale(1);
+  };
+
+  const handleImageClick = () => {
+    setIsImageZoomed(true);
+  };
+
+  const handleZoomClose = () => {
+    setIsImageZoomed(false);
+    setImageScale(1);
+  };
+
+  const handleZoomIn = () => {
+    setImageScale((prev) => Math.min(prev + 0.5, 3));
+  };
+
+  const handleZoomOut = () => {
+    setImageScale((prev) => Math.max(prev - 0.5, 0.5));
   };
 
   const handleClose = () => {
