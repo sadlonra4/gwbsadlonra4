@@ -7,6 +7,7 @@ import GallerySection from "@/components/GallerySection";
 import ContributeSection from "@/components/ContributeSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import CartSummary from "@/components/CartSummary";
 
 const Index = () => {
   return (
@@ -20,6 +21,9 @@ const Index = () => {
       <ContributeSection />
       <ContactSection />
       <Footer />
+
+      {/* Cart Summary - appears when items are in cart */}
+      <CartSummary />
     </div>
   );
 };

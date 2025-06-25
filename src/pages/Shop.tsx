@@ -20,6 +20,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
 import { useCart } from "@/contexts/CartContext";
 import { useLanguage } from "@/contexts/LanguageContext";
+import CartSummary from "@/components/CartSummary";
 
 interface FilterState {
   priceRange: [number, number];
@@ -553,31 +554,11 @@ const Shop = () => {
               ))}
             </div>
           )}
-
-          {/* Cart Summary */}
-          {cartCount > 0 && (
-            <div className="fixed bottom-6 right-6 bg-gwb-black text-gwb-white p-4 rounded-lg shadow-lg">
-              <div className="flex items-center space-x-4">
-                <div>
-                  <p className="font-semibold">Krepšelis: {cartCount} prekės</p>
-                  <p className="text-sm opacity-75">
-                    Spustelėkite, kad peržiūrėtumėte
-                  </p>
-                </div>
-                <Link to="/cart">
-                  <Button
-                    size="sm"
-                    style={{ backgroundColor: "#a3e635" }}
-                    className="text-gwb-black"
-                  >
-                    PERŽIŪRĖTI
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          )}
         </div>
       </main>
+
+      {/* Cart Summary - appears when items are in cart */}
+      <CartSummary />
     </div>
   );
 };
