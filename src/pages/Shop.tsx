@@ -276,7 +276,7 @@ const Shop = () => {
       price: "20€",
       category: "Drabužiai",
       image:
-        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=400&auto=format&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F78fabad015d54cea946530002a303fce",
       description: "Marškinėliai tikram žaliai baltam fanui iki kaulų smegenų.",
       rating: 4.8,
       isNew: false,
