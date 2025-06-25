@@ -26,51 +26,28 @@ const ShopSection = () => {
   const products = [
     {
       id: 1,
-      name: "GWB Šalikas",
-      price: "25€",
+      name: "ŽALIAI BALTAS IKI KAULų smegenų",
+      price: "40€",
       image:
-        "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=400&auto=format&fit=crop",
-      description: "Oficialus Green White Boys šalikas",
+        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F67232d5c0e83475b85dd5b6b8a303105",
+      description: "Išskirtinis džemperis tikram žaliai baltam fanui",
     },
     {
       id: 2,
-      name: "Žalgiris Marškinėliai",
-      price: "35€",
+      name: "ŽALIAI BALTA aistra",
+      price: "30€",
       image:
-        "https://images.unsplash.com/photo-1527576539890-dfa815648363?q=80&w=400&auto=format&fit=crop",
-      description: "Premium kokybės marškinėliai",
+        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F24f2a69f231b4aae8bfa77805c61bfbf",
+      description: "Megztinis be kapišono su žaliai baltos aistros simbolika",
     },
     {
       id: 3,
-      name: "GWB Lipdukų rinkinys",
-      price: "10€",
-      image:
-        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=400&auto=format&fit=crop",
-      description: "15 skirtingų lipdukų rinkinys",
-    },
-    {
-      id: 4,
-      name: "Žalgiris Kepurė",
+      name: "ŽALIAI BALTA AISTRA",
       price: "20€",
       image:
-        "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=400&auto=format&fit=crop",
-      description: "Žieminė kepurė su logo",
-    },
-    {
-      id: 5,
-      name: "GWB Džemperis",
-      price: "55€",
-      image:
-        "https://images.unsplash.com/photo-1527576539890-dfa815648363?q=80&w=400&auto=format&fit=crop",
-      description: "Šiltas džemperis su kapišonu",
-    },
-    {
-      id: 6,
-      name: "Žalgiris Puodelis",
-      price: "15€",
-      image:
-        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=400&auto=format&fit=crop",
-      description: "Keramikinis puodelis fanams",
+        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F70b772d7fbf5450cb1a854596ac7fed2",
+      description:
+        "Klasikiniai marškinėliai su žaliai baltos aistros simbolika",
     },
   ];
   return (
