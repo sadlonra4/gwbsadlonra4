@@ -38,7 +38,7 @@ const ShopSection = () => {
       price: "30€",
       image:
         "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F24f2a69f231b4aae8bfa77805c61bfbf",
-      description: "Megztinis be kapišono su žaliai baltos aistros simbolika",
+      description: "Megztinis be kapišonu su žaliai baltos aistros simbolika",
     },
     {
       id: 3,
@@ -48,6 +48,30 @@ const ShopSection = () => {
         "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F70b772d7fbf5450cb1a854596ac7fed2",
       description:
         "Klasikiniai marškinėliai su žaliai baltos aistros simbolika",
+    },
+    {
+      id: 4,
+      name: 'LIPDUKAI "KAUNAS"',
+      price: "5€",
+      image:
+        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F6db430026c15498f8fa146758a4128d0",
+      description: "24 skirtingų lipdukų rinkinys. Atsparūs orui ir vandeniui",
+    },
+    {
+      id: 5,
+      name: 'LIPDUKAI "ŽALGIRIS"',
+      price: "5€",
+      image:
+        "https://cdn.builder.io/api/v1/image/assets%2F36c58a22022c4771b1fc6957762733ab%2F7e1a01af359f4ab4b51ae75e30d36168",
+      description: "24 skirtingų lipdukų rinkinys. Atsparūs orui ir vandeniui",
+    },
+    {
+      id: 6,
+      name: 'LIPDUKAI "2007"',
+      price: "5€",
+      image:
+        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F6db430026c15498f8fa146758a4128d0",
+      description: "Kolekcinis lipdukų rinkinys su 2007 metų simbolika",
     },
   ];
   return (
