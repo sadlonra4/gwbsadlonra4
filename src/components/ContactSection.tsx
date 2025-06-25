@@ -32,7 +32,7 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gwb-white mb-4">
-            <span className="text-gwb-black text-lime-400">KONTAKTAI</span>
+            <span style={{ color: "#7ED321" }}>KONTAKTAI</span>
           </h2>
           <p className="text-gwb-white text-lg max-w-2xl mx-auto">
             Turite klausimų? Norite prisijungti? Susisiekite su mumis!
