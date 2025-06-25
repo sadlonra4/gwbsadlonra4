@@ -137,7 +137,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-oswald text-lg font-semibold text-gwb-black">
-                      Telefoqwertųūnas
+                      Telefonas
                     </h4>
                     <p className="text-gwb-black">+370 XXX XXXXX</p>
                   </div>
