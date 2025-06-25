@@ -196,7 +196,7 @@ const Shop = () => {
       price: "8€",
       category: "Drabužiai",
       image:
-        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=400&auto=format&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2Fb2778445288d4201927f2ea99b546c42",
       description:
         "Moteriški marškinėliai su Žalgirio skydo simbolika. Išskirtinis dizainas.",
       rating: 4.6,
