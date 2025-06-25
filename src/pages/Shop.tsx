@@ -84,7 +84,7 @@ const Shop = () => {
       isPopular: true,
       type: "clothing",
       sizes: ["S", "M", "L", "XL", "XXL"],
-      colors: ["Žalia", "Balta"],
+      colors: ["��alia", "Balta"],
     },
     {
       id: 3,
@@ -307,7 +307,7 @@ const Shop = () => {
       price: "20€",
       category: "Drabužiai",
       image:
-        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=400&auto=format&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2Fb157fed2440842ffaeb7a6273f09c224",
       description: "Istoriniai marškinėliai su svarbiausių metų simbolika.",
       rating: 4.7,
       isNew: false,
