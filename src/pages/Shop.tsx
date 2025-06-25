@@ -368,6 +368,16 @@ const Shop = () => {
     );
   });
 
+  const handleProductClick = (product: Product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
+
   const handleAddToCart = (product: any) => {
     addToCart({
       id: product.id,
