@@ -733,21 +733,41 @@ const Shop = () => {
                       </div>
                     </div>
 
-                    {/* Add to Cart Button */}
+                    {/* Add to Cart Button or Quick Buy */}
                     <Button
-                      onClick={() =>
-                        isInCart(product.id)
-                          ? removeFromCart(product.id)
-                          : handleAddToCart(product)
-                      }
+                      onClick={(e) => {
+                        e.stopPropagation(); // Prevent card click
+                        if (product.isSoldOut) return;
+
+                        if (product.type === "clothing") {
+                          // For clothing, open modal
+                          handleProductClick(product);
+                        } else {
+                          // For non-clothing, direct add to cart
+                          if (isInCart(product.id)) {
+                            removeFromCart(product.id);
+                          } else {
+                            handleAddToCart(product);
+                          }
+                        }
+                      }}
+                      disabled={product.isSoldOut}
                       className={`w-full font-semibold ${
-                        isInCart(product.id)
-                          ? "bg-red-500 hover:bg-red-600 text-white"
-                          : "bg-gwb-black hover:bg-gwb-black/80 text-gwb-white"
+                        product.isSoldOut
+                          ? "bg-gray-400 cursor-not-allowed"
+                          : isInCart(product.id)
+                            ? "bg-red-500 hover:bg-red-600 text-white"
+                            : "bg-gwb-black hover:bg-gwb-black/80 text-gwb-white"
                       }`}
                     >
                       <ShoppingCart className="mr-2" size={16} />
-                      {isInCart(product.id) ? t("remove") : t("buy")}
+                      {product.isSoldOut
+                        ? "IŠPARDUOTA"
+                        : product.type === "clothing"
+                          ? "Pasirinkti"
+                          : isInCart(product.id)
+                            ? t("remove")
+                            : t("buy")}
                     </Button>
                   </CardContent>
                 </Card>
