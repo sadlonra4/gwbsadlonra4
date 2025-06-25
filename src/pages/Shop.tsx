@@ -33,6 +33,8 @@ interface FilterState {
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState("Visi");
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [filters, setFilters] = useState<FilterState>({
     priceRange: [0, 50],
     minRating: 0,
