@@ -162,11 +162,21 @@ const ProductDetailModal = ({
         <div className="grid md:grid-cols-2 gap-6">
           {/* Product Image */}
           <div className="flex justify-center">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full max-w-md h-auto object-cover rounded-lg"
-            />
+            <div
+              className="relative group cursor-pointer"
+              onClick={handleImageClick}
+            >
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full max-w-md h-auto object-cover rounded-lg transition-transform duration-200 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 rounded-lg transition-all duration-200 flex items-center justify-center">
+                <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-sm font-medium bg-black bg-opacity-60 px-3 py-1 rounded">
+                  Click to zoom
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Product Details */}
