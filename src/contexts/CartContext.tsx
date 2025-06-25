@@ -59,17 +59,33 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const addToCart = (product: Omit<CartItem, "quantity">) => {
+  const addToCart = (
+    product: Omit<CartItem, "quantity"> & { quantity?: number },
+  ) => {
     setCartItems((prevItems) => {
-      const existingItem = prevItems.find((item) => item.id === product.id);
+      const { quantity: addQuantity = 1, ...productWithoutQuantity } = product;
+
+      // For items with size/color, treat as separate items even if same product ID
+      const existingItem = prevItems.find(
+        (item) =>
+          item.id === product.id &&
+          item.size === product.size &&
+          item.color === product.color,
+      );
+
       if (existingItem) {
         return prevItems.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
+          item.id === product.id &&
+          item.size === product.size &&
+          item.color === product.color
+            ? { ...item, quantity: item.quantity + addQuantity }
             : item,
         );
       } else {
-        return [...prevItems, { ...product, quantity: 1 }];
+        return [
+          ...prevItems,
+          { ...productWithoutQuantity, quantity: addQuantity },
+        ];
       }
     });
   };
