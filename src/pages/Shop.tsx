@@ -665,7 +665,9 @@ const Shop = () => {
                       className={`h-60 object-cover mx-auto ${
                         product.isSoldOut ? "grayscale" : ""
                       }`}
-                      style={{ width: product.id === 8 ? "263px" : "69%" }}
+                      style={{
+                        width: product.type === "sticker" ? "263px" : "69%",
+                      }}
                     />
                     {product.isSoldOut && (
                       <span className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs font-bold rounded">
