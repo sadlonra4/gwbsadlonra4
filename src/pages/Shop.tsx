@@ -53,7 +53,8 @@ const Shop = () => {
     "Naujienos",
   ];
 
-  const products = [
+  const products: Product[] = [
+    // Existing products with extended interface
     {
       id: 1,
       name: '"KAUNAS" MEGZTINIS BE KAPIŠONO',
@@ -66,6 +67,9 @@ const Shop = () => {
       rating: 4.8,
       isNew: false,
       isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Juoda"],
     },
     {
       id: 2,
@@ -78,6 +82,9 @@ const Shop = () => {
       rating: 4.9,
       isNew: true,
       isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta"],
     },
     {
       id: 3,
@@ -91,6 +98,7 @@ const Shop = () => {
       rating: 4.6,
       isNew: false,
       isPopular: false,
+      type: "sticker",
     },
     {
       id: 4,
@@ -103,6 +111,9 @@ const Shop = () => {
       rating: 4.7,
       isNew: false,
       isPopular: false,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Juoda"],
     },
     {
       id: 5,
@@ -116,6 +127,9 @@ const Shop = () => {
       rating: 4.9,
       isNew: true,
       isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Juoda"],
     },
     {
       id: 6,
@@ -129,6 +143,9 @@ const Shop = () => {
       rating: 4.5,
       isNew: false,
       isPopular: false,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Juoda"],
     },
     {
       id: 7,
@@ -141,6 +158,7 @@ const Shop = () => {
       rating: 4.8,
       isNew: true,
       isPopular: true,
+      type: "accessory",
     },
     {
       id: 8,
@@ -154,6 +172,165 @@ const Shop = () => {
       rating: 4.4,
       isNew: false,
       isPopular: false,
+      type: "sticker",
+    },
+    // New Lithuanian products
+    {
+      id: 9,
+      name: 'LIPDUKAI "2007"',
+      price: "5€",
+      category: "Aksesuarai",
+      image:
+        "https://cdn.builder.io/api/v1/image/assets%2F36c58a22022c4771b1fc6957762733ab%2F138f3ccbe18d4bfc870dc7379ba32825",
+      description:
+        "Kolekcinis lipdukų rinkinys su 2007 metų simbolika. Atsparūs orui ir vandeniui.",
+      rating: 4.7,
+      isNew: false,
+      isPopular: true,
+      type: "sticker",
+      isSoldOut: true,
+    },
+    {
+      id: 10,
+      name: '"ŽALGIRIS SKYDAS" MARŠKINĖLIAI (MOTERIŠKI)',
+      price: "8€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=400&auto=format&fit=crop",
+      description:
+        "Moteriški marškinėliai su Žalgirio skydo simbolika. Išskirtinis dizainas.",
+      rating: 4.6,
+      isNew: false,
+      isPopular: false,
+      type: "clothing",
+      sizes: ["XS", "S", "M", "L", "XL"],
+      colors: ["Žalia", "Balta"],
+    },
+    {
+      id: 11,
+      name: '"ŽALIAI BALTA AISTRA" MEGZTINIS BE KAPIŠONO',
+      price: "30€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400&auto=format&fit=crop",
+      description:
+        "Stilingas megztinis be kapišono su žaliai baltos aistros simbolika.",
+      rating: 4.8,
+      isNew: true,
+      isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Žalia-Balta"],
+    },
+    {
+      id: 12,
+      name: '"ŽALIAI BALTA AISTRA" DŽEMPERIS',
+      price: "40€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400&auto=format&fit=crop",
+      description:
+        "Šiltas džemperis su kapišonu ir žaliai baltos aistros simbolika.",
+      rating: 4.9,
+      isNew: true,
+      isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Žalia-Balta"],
+    },
+    {
+      id: 13,
+      name: '"ŽALIAI BALTAS IKI KAULŲ SMEGENŲ" DŽEMPERIS',
+      price: "40€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400&auto=format&fit=crop",
+      description:
+        "Išskirtinis džemperis tikram žaliai baltam fanui. Su kapišonu.",
+      rating: 4.9,
+      isNew: false,
+      isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Žalia-Balta"],
+    },
+    {
+      id: 14,
+      name: '"ŽALIAI BALTA AISTRA" MARŠKINĖLIAI',
+      price: "20€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=400&auto=format&fit=crop",
+      description:
+        "Klasikiniai marškinėliai su žaliai baltos aistros simbolika.",
+      rating: 4.7,
+      isNew: false,
+      isPopular: false,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Žalia-Balta"],
+    },
+    {
+      id: 15,
+      name: '"ŽALIAI BALTAS IKI KAULŲ SMEGENŲ" MARŠKINĖLIAI',
+      price: "20€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=400&auto=format&fit=crop",
+      description: "Marškinėliai tikram žaliai baltam fanui iki kaulų smegenų.",
+      rating: 4.8,
+      isNew: false,
+      isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Žalia-Balta"],
+    },
+    {
+      id: 16,
+      name: '"KAUNAS" MARŠKINĖLIAI',
+      price: "20€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=400&auto=format&fit=crop",
+      description:
+        "Marškinėliai su Kauno simbolika. Puikus pasirinkimas miesto patriotams.",
+      rating: 4.6,
+      isNew: false,
+      isPopular: false,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta"],
+    },
+    {
+      id: 17,
+      name: '"1410 / 1944" MARŠKINĖLIAI',
+      price: "20€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=400&auto=format&fit=crop",
+      description: "Istoriniai marškinėliai su svarbiausių metų simbolika.",
+      rating: 4.7,
+      isNew: false,
+      isPopular: false,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Juoda"],
+    },
+    {
+      id: 18,
+      name: '"ŽALIAI BALTAS IKI KAULŲ SMEGENŲ" MEGZTINIS BE KAPIŠONO',
+      price: "30€",
+      category: "Drabužiai",
+      image:
+        "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400&auto=format&fit=crop",
+      description:
+        "Megztinis be kapišono tikram žaliai baltam fanui iki kaulų smegenų.",
+      rating: 4.8,
+      isNew: false,
+      isPopular: true,
+      type: "clothing",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Žalia", "Balta", "Žalia-Balta"],
     },
   ];
 
