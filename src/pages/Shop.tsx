@@ -241,10 +241,10 @@ const Shop = () => {
     {
       id: 13,
       name: '"ŽALIAI BALTAS IKI KAULŲ SMEGENŲ" DŽEMPERIS',
-      price: "40€",
+      price: "40��",
       category: "Drabužiai",
       image:
-        "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400&auto=format&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F67232d5c0e83475b85dd5b6b8a303105",
       description:
         "Išskirtinis džemperis tikram žaliai baltam fanui. Su kapišonu.",
       rating: 4.9,
