@@ -22,8 +22,8 @@ class InstagramService {
   private baseUrl = "https://graph.instagram.com";
 
   constructor() {
-    // In production, store this in environment variables
-    this.accessToken = process.env.REACT_APP_INSTAGRAM_ACCESS_TOKEN || "";
+    // In Vite, environment variables are accessed via import.meta.env
+    this.accessToken = import.meta.env.VITE_INSTAGRAM_ACCESS_TOKEN || "";
   }
 
   async getRecentPosts(limit: number = 9): Promise<InstagramPost[]> {

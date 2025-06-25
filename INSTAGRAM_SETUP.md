@@ -38,8 +38,10 @@ Your gallery component is now ready to display Instagram posts! It includes:
 1. Create `.env` file in your project root:
 
 ```bash
-REACT_APP_INSTAGRAM_ACCESS_TOKEN=your_token_here
+VITE_INSTAGRAM_ACCESS_TOKEN=your_token_here
 ```
+
+**Important**: In Vite, environment variables must be prefixed with `VITE_` to be accessible in the browser.
 
 2. Restart your development server:
 
@@ -49,13 +51,13 @@ npm run dev
 
 ## 🎯 Current Features
 
-✅ **Automatic fallback** - Shows placeholder images if Instagram API is down  
-✅ **Loading states** - Smooth loading experience  
-✅ **Error handling** - Graceful error management  
-✅ **Instagram branding** - Clear Instagram indicators  
-✅ **Modal view** - Full-screen image viewing  
-✅ **Direct links** - Links to original Instagram posts  
-✅ **Mobile responsive** - Works on all devices  
+✅ **Automatic fallback** - Shows placeholder images if Instagram API is down
+✅ **Loading states** - Smooth loading experience
+✅ **Error handling** - Graceful error management
+✅ **Instagram branding** - Clear Instagram indicators
+✅ **Modal view** - Full-screen image viewing
+✅ **Direct links** - Links to original Instagram posts
+✅ **Mobile responsive** - Works on all devices
 ✅ **Translation support** - LT/EN language switching
 
 ## 🔄 Alternative: Static Instagram-style Feed
