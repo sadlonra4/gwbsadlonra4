@@ -11,39 +11,7 @@ const SongsDownload = () => {
     {
       title: "OficialUSs himnas",
       count: 3,
-      songs: ["Žalgirio himnas", "Green White Boys", 
-"Kai mažas dar labai buvau
-Į Halę vedės tėtis
-Išmokė jis tada mane
-Kovoti ir tikėti
-Ir mes kartojom viens kitam
-Atėjo mūsų laikas
-Įskiepijo jis man seniai
-Žaliai balti dievai
-Kovoooooook, kai bus sunku
-Ir negailėk visų jėgų
-Juk plaka tūkstančiai širdžių
-Dėl šių dviejų brangių spalvų
-Kovoooooook, kai bus sunku
-Ir negailėk visų jėgų
-Juk plaka tūkstančiai širdžių
-Dėl šių dviejų brangių spalvų
-Nors metų jau praėjo daug
-Ir pats esu jau tėtis
-Dabar jau mokau aš
-Kad reikia visada tikėti
-Šią garbę nešam išdidžiai
-Mes iš kartos į kartą
-Tegul pavydi mums visi
-Mes būsime pirmi
-Kovoooooook, kai bus sunku
-Ir negailėk visų jėgų
-Juk plaka tūkstančiai širdžių
-Dėl šių dviejų brangių spalvų
-Kovoooooook, kai bus sunku
- Ir negailėk visų jėgų
-Juk plaka tūkstančiai širdžių 
-Dėl šių dviejų brangių spalvų"],
+      songs: ["Žalgirio himnas", "Green White Boys", "Mes esam Žalgiris"],
     },
     {
       title: "Palaikymo skanduotės",
