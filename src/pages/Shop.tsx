@@ -291,7 +291,7 @@ const Shop = () => {
       price: "20€",
       category: "Drabužiai",
       image:
-        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=400&auto=format&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2Feb6b6cd4adda42859026b7d5b9760d09",
       description:
         "Marškinėliai su Kauno simbolika. Puikus pasirinkimas miesto patriotams.",
       rating: 4.6,
