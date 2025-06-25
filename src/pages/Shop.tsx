@@ -168,7 +168,7 @@ const Shop = () => {
       price: "5€",
       category: "Aksesuarai",
       image:
-        "https://cdn.builder.io/api/v1/image/assets%2F36c58a22022c4771b1fc6957762733ab%2F138f3ccbe18d4bfc870dc7379ba32825",
+        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F6db430026c15498f8fa146758a4128d0",
       description:
         "Kolekcinis lipdukų rinkinys su 2007 metų simbolika. Atsparūs orui ir vandeniui.",
       rating: 4.7,
