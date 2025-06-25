@@ -666,16 +666,26 @@ const Shop = () => {
               {filteredProducts.map((product) => (
                 <Card
                   key={product.id}
-                  className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300 group flex flex-col"
+                  className={`border-2 border-gwb-black hover:shadow-lg transition-all duration-300 group flex flex-col cursor-pointer ${
+                    product.isSoldOut ? "opacity-75" : ""
+                  }`}
+                  onClick={() => handleProductClick(product)}
                 >
                   <div className="relative flex flex-col">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="h-60 object-cover mx-auto"
+                      className={`h-60 object-cover mx-auto ${
+                        product.isSoldOut ? "grayscale" : ""
+                      }`}
                       style={{ width: product.id === 8 ? "263px" : "69%" }}
                     />
-                    {product.isNew && (
+                    {product.isSoldOut && (
+                      <span className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs font-bold rounded">
+                        IŠPARDUOTA
+                      </span>
+                    )}
+                    {product.isNew && !product.isSoldOut && (
                       <span className="absolute top-2 left-2 bg-gwb-green text-gwb-black px-2 py-1 text-xs font-bold rounded">
                         NAUJA
                       </span>
