@@ -9,7 +9,7 @@ const SongsDownload = () => {
 
   const songCategories = [
     {
-      title: "OficialUSs himnas",
+      title: "Oficialus himnas",
       count: 3,
       songs: ["Žalgirio himnas", "Green White Boys", "Mes esam Žalgiris"],
     },
