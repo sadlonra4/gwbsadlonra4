@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import {
   ArrowLeft,
   ExternalLink,
@@ -13,14 +12,7 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Support = () => {
-  const [isLoading, setIsLoading] = useState(true);
   const { t, language } = useLanguage();
-
-  useEffect(() => {
-    // Simulate loading time for iframe
-    const timer = setTimeout(() => setIsLoading(false), 1500);
-    return () => clearTimeout(timer);
-  }, []);
 
   const supportStats = [
     {
@@ -126,51 +118,57 @@ const Support = () => {
           {/* Contribee Integration */}
           <Card className="border-2 border-gwb-black mb-8">
             <CardContent className="p-0">
-              <div className="bg-gwb-black text-gwb-white p-4 flex items-center justify-between">
-                <div>
-                  <h3 className="font-oswald text-xl font-semibold">
+              <div className="bg-gwb-black text-gwb-white p-6 text-center">
+                <div className="mb-6">
+                  <h3 className="font-oswald text-2xl font-semibold mb-2">
                     {language === "LT"
                       ? "Oficiali paramos platforma"
                       : "Official support platform"}
                   </h3>
-                  <p className="text-sm opacity-75">
+                  <p className="text-sm opacity-75 mb-4">
                     {language === "LT"
-                      ? "Powered by Contribee - saugus ir patikimas būdas paremti"
-                      : "Powered by Contribee - safe and reliable way to support"}
+                      ? "Powered by Contribee - saugus ir patikimas būdas paremti GWB"
+                      : "Powered by Contribee - safe and reliable way to support GWB"}
                   </p>
                 </div>
+
+                <div className="bg-gwb-green/10 rounded-lg p-6 mb-6">
+                  <div className="text-gwb-green mb-4">
+                    <Heart size={48} className="mx-auto" />
+                  </div>
+                  <h4 className="font-oswald text-xl font-semibold text-gwb-white mb-2">
+                    Green White Boys
+                  </h4>
+                  <p className="text-sm text-gwb-white/80 mb-4">
+                    {language === "LT"
+                      ? "Palaikyk mūsų fanų klubą ir prisidėk prie nepamirštamos atmosferos kūrimo!"
+                      : "Support our fan club and contribute to creating unforgettable atmosphere!"}
+                  </p>
+                  <div className="text-xs text-gwb-white/60">
+                    contribee.com/greenwhiteboys
+                  </div>
+                </div>
+
                 <a
                   href="https://contribee.com/greenwhiteboys"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gwb-green hover:text-gwb-white transition-colors"
+                  className="inline-block"
                 >
-                  <ExternalLink size={24} />
+                  <Button
+                    size="lg"
+                    className="bg-gwb-green hover:bg-gwb-green/80 text-gwb-black font-bold text-lg px-8 py-3"
+                  >
+                    <ExternalLink className="mr-2" size={20} />
+                    {language === "LT" ? "PAREMTI DABAR" : "SUPPORT NOW"}
+                  </Button>
                 </a>
-              </div>
 
-              {/* Loading State */}
-              {isLoading && (
-                <div className="flex items-center justify-center py-20">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gwb-green"></div>
-                  <span className="ml-4 text-gwb-black">
-                    {language === "LT" ? "Kraunama..." : "Loading..."}
-                  </span>
-                </div>
-              )}
-
-              {/* Contribee Iframe */}
-              <div className={`${isLoading ? "hidden" : "block"}`}>
-                <iframe
-                  src="https://contribee.com/greenwhiteboys"
-                  width="100%"
-                  height="800"
-                  frameBorder="0"
-                  scrolling="auto"
-                  title="Green White Boys - Contribee Support Page"
-                  className="w-full"
-                  onLoad={() => setIsLoading(false)}
-                />
+                <p className="text-xs text-gwb-white/60 mt-4">
+                  {language === "LT"
+                    ? "Nukreips į saugią Contribee platformą"
+                    : "Redirects to secure Contribee platform"}
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -214,46 +212,56 @@ const Support = () => {
             <Card className="border-2 border-gwb-black">
               <CardContent className="p-6">
                 <h3 className="font-oswald text-xl font-semibold text-gwb-black mb-4">
-                  {language === "LT"
-                    ? "Kiti paramos būdai"
-                    : "Other ways to support"}
+                  {language === "LT" ? "Kaip paremti?" : "How to support?"}
                 </h3>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded">
-                    <span className="text-sm font-medium">
-                      {language === "LT" ? "Tiesioginė nuoroda" : "Direct link"}
-                    </span>
-                    <a
-                      href="https://contribee.com/greenwhiteboys"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gwb-green hover:text-gwb-black transition-colors text-sm font-medium"
-                    >
-                      contribee.com/greenwhiteboys
-                    </a>
+                <div className="space-y-4">
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <h4 className="font-semibold text-gwb-black mb-2">
+                      {language === "LT"
+                        ? "1. Eikite į Contribee"
+                        : "1. Go to Contribee"}
+                    </h4>
+                    <p className="text-sm text-gray-600 mb-3">
+                      {language === "LT"
+                        ? "Spustelėkite mygtuką ir b��site nukreipti į saugią Contribee platformą"
+                        : "Click the button and you'll be redirected to the secure Contribee platform"}
+                    </p>
+                    <div className="text-center">
+                      <a
+                        href="https://contribee.com/greenwhiteboys"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gwb-green hover:text-gwb-black transition-colors text-sm font-medium"
+                      >
+                        contribee.com/greenwhiteboys →
+                      </a>
+                    </div>
                   </div>
 
-                  <div className="text-center pt-4">
-                    <p className="text-sm text-gray-600 mb-4">
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <h4 className="font-semibold text-gwb-black mb-2">
                       {language === "LT"
-                        ? "Taip pat galite paremti tiesiogiai per Contribee platformą"
-                        : "You can also support directly through the Contribee platform"}
+                        ? "2. Pasirinkite sumą"
+                        : "2. Choose amount"}
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      {language === "LT"
+                        ? "Kiekvienas euras svarbus mūsų bendram tikslui"
+                        : "Every euro matters for our common goal"}
                     </p>
-                    <a
-                      href="https://contribee.com/greenwhiteboys"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button
-                        size="lg"
-                        className="bg-gwb-green hover:bg-gwb-green/80 text-gwb-black font-semibold"
-                      >
-                        <ExternalLink className="mr-2" size={20} />
-                        {language === "LT"
-                          ? "Atidaryti Contribee"
-                          : "Open Contribee"}
-                      </Button>
-                    </a>
+                  </div>
+
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <h4 className="font-semibold text-gwb-black mb-2">
+                      {language === "LT"
+                        ? "3. Saugus mokėjimas"
+                        : "3. Secure payment"}
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      {language === "LT"
+                        ? "Contribee užtikrina saugų mokėjimų procesą"
+                        : "Contribee ensures secure payment processing"}
+                    </p>
                   </div>
                 </div>
               </CardContent>
