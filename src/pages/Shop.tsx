@@ -84,7 +84,7 @@ const Shop = () => {
       isPopular: true,
       type: "clothing",
       sizes: ["S", "M", "L", "XL", "XXL"],
-      colors: ["��alia", "Balta"],
+      colors: ["Žalia", "Balta"],
     },
     {
       id: 3,
@@ -123,7 +123,7 @@ const Shop = () => {
       image:
         "https://cdn.builder.io/api/v1/image/assets%2F36c58a22022c4771b1fc6957762733ab%2Fe688a1b5804e4f88813d3618eea10c4e",
       description:
-        "Šiltas Oficialus Green White Boys medvilninis džemperis su kapišonu.",
+        "��iltas Oficialus Green White Boys medvilninis džemperis su kapišonu.",
       rating: 4.9,
       isNew: true,
       isPopular: true,
@@ -322,7 +322,7 @@ const Shop = () => {
       price: "30€",
       category: "Drabužiai",
       image:
-        "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400&auto=format&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F62d72d4e4fea40bdaf986ebec1ff8d3d",
       description:
         "Megztinis be kapišono tikram žaliai baltam fanui iki kaulų smegenų.",
       rating: 4.8,
