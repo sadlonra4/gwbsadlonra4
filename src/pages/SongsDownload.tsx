@@ -141,7 +141,6 @@ const SongsDownload = () => {
                   >
                     {category.count}
                   </p>
-                  <p className="text-sm text-gwb-black mb-4">dainų</p>
                   <div className="space-y-1">
                     {category.songs.slice(0, 3).map((song, songIndex) => (
                       <p key={songIndex} className="text-xs text-gray-600">
