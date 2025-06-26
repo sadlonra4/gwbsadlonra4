@@ -673,35 +673,37 @@ const Shop = () => {
                       </span>
                     )}
                   </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-oswald text-lg font-semibold text-gwb-black mb-2">
-                      {product.name}
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-3 line-clamp-2">
-                      {product.description}
-                    </p>
+                  <CardContent className="p-4 flex flex-col h-full">
+                    <div className="flex-grow">
+                      <h3 className="font-oswald text-lg font-semibold text-gwb-black mb-2">
+                        {product.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+                        {product.description}
+                      </p>
 
-                    {/* Rating */}
-                    <div className="flex items-center mb-3">
-                      <div className="flex items-center">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            size={12}
-                            className={
-                              i < Math.floor(product.rating)
-                                ? "fill-yellow-400 text-yellow-400"
-                                : "text-gray-300"
-                            }
-                          />
-                        ))}
+                      {/* Rating */}
+                      <div className="flex items-center mb-3">
+                        <div className="flex items-center">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              size={12}
+                              className={
+                                i < Math.floor(product.rating)
+                                  ? "fill-yellow-400 text-yellow-400"
+                                  : "text-gray-300"
+                              }
+                            />
+                          ))}
+                        </div>
+                        <span className="text-xs text-gray-600 ml-2">
+                          ({product.rating})
+                        </span>
                       </div>
-                      <span className="text-xs text-gray-600 ml-2">
-                        ({product.rating})
-                      </span>
                     </div>
 
-                    {/* Price */}
+                    {/* Price - positioned consistently */}
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         <span className="text-xl font-bold text-gwb-black">
@@ -710,7 +712,7 @@ const Shop = () => {
                       </div>
                     </div>
 
-                    {/* Add to Cart Button or Quick Buy */}
+                    {/* Add to Cart Button or Quick Buy - always at bottom */}
                     <Button
                       onClick={(e) => {
                         e.stopPropagation(); // Prevent card click
