@@ -641,7 +641,7 @@ const Shop = () => {
               {filteredProducts.map((product) => (
                 <Card
                   key={product.id}
-                  className={`border-2 border-gwb-black hover:shadow-lg transition-all duration-300 group flex flex-col cursor-pointer ${
+                  className={`border-2 border-gwb-black hover:shadow-lg transition-all duration-300 group flex flex-col cursor-pointer h-full ${
                     product.isSoldOut ? "opacity-75" : ""
                   }`}
                   onClick={() => handleProductClick(product)}
