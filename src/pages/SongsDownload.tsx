@@ -88,7 +88,7 @@ const SongsDownload = () => {
                 style={{ color: "#a3e635" }}
               />
               <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gwb-black mb-4">
-                VISOS GWB DAINOS
+                VISOS <span style={{ color: "#7ED321" }}>GWB</span> SKANDUOTĖS
               </h2>
               <p className="text-gwb-black text-lg max-w-2xl mx-auto">
                 Atsisiųsk visą GWB dainų kolekciją ir dainuok kartu su mumis
