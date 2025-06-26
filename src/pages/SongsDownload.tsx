@@ -9,12 +9,12 @@ const SongsDownload = () => {
 
   const songCategories = [
     {
-      title: "Oficialūs himnas",
-      count: 3,
-      songs: ["Žalgirio himnas", "Green White Boys", "Mes esam Žalgiris"],
+      title: "Oficialus himnas",
+      count: 1,
+      songs: ["Žalgirio himnas"],
     },
     {
-      title: "Palaikymo dainos",
+      title: "Palaikymo skanduotės",
       count: 15,
       songs: [
         "Mes einam į pergalę",
@@ -25,7 +25,7 @@ const SongsDownload = () => {
       ],
     },
     {
-      title: "Choreografijos dainos",
+      title: "Choreografijos skanduotės",
       count: 8,
       songs: [
         "Arena drebės",
@@ -35,7 +35,7 @@ const SongsDownload = () => {
       ],
     },
     {
-      title: "Klasikinės dainos",
+      title: "Klasikinės skanduotės",
       count: 12,
       songs: [
         "Seni gerieji",
