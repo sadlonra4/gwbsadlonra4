@@ -153,9 +153,9 @@ const SongsDownload = () => {
             ))}
           </div>
 
-          {/* New Anthem Section */}
-          <div className="mb-12">
-            <Card className="border-2 border-gwb-black">
+          {/* Official Anthem Section */}
+          <div className="mb-12 flex justify-center">
+            <Card className="border-2 border-gwb-black max-w-4xl w-full">
               <CardContent className="p-8">
                 <div className="text-center mb-6">
                   <h3 className="font-oswald text-2xl font-bold text-gwb-black mb-4">
