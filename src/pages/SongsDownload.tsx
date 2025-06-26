@@ -159,10 +159,10 @@ const SongsDownload = () => {
               <CardContent className="p-8">
                 <div className="text-center mb-6">
                   <h3 className="font-oswald text-2xl font-bold text-gwb-black mb-4">
-                    NAUJA <span style={{ color: "#7ED321" }}>SKANDUOTĖ</span>
+                    Oficialus himnas
                   </h3>
                   <p className="text-gwb-black text-lg mb-6">
-                    "Kai mažas dar labai buvau" - Oficialus Žalgirio himnas
+                    "Žaliai Balti Dievai" - Oficialus Žalgirio himnas
                   </p>
                 </div>
 
