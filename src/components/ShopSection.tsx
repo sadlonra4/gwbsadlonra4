@@ -34,7 +34,7 @@ const ShopSection = () => {
     },
     {
       id: 2,
-      name: "ŽALIAI BALTA aistra",
+      name: "ŽALIAI BALTA AISTRA",
       price: "30€",
       image:
         "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F24f2a69f231b4aae8bfa77805c61bfbf",
