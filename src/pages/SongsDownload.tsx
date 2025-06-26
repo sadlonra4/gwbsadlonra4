@@ -9,11 +9,6 @@ const SongsDownload = () => {
 
   const songCategories = [
     {
-      title: "Oficialus himnas",
-      count: 1,
-      songs: ["Žalgirio himnas"],
-    },
-    {
       title: "Palaikymo skanduotės",
       count: 15,
       songs: [
