@@ -106,7 +106,9 @@ const SongsDownload = () => {
               style={{ backgroundColor: downloadStarted ? "#666" : undefined }}
             >
               <Download size={24} className="mr-3" />
-              {downloadStarted ? "ATSISIUNČIAMA..." : "ATSISIŲSTI VISAS DAINAS"}
+              {downloadStarted
+                ? "ATSISIUNČIAMA..."
+                : "ATSISIŲSTI VISAS SKANDUOTES"}
             </Button>
 
             {downloadStarted && (
