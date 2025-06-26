@@ -133,19 +133,7 @@ const Shop = () => {
       sizes: ["S", "M", "L", "XL", "XXL"],
       colors: ["Žalia", "Balta", "Juoda"],
     },
-    {
-      id: 7,
-      name: "GWB Flagas",
-      price: "40€",
-      category: "Kolekcija",
-      image:
-        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=400&auto=format&fit=crop",
-      description: "Didelis GWB flagas arenai. 150x100 cm dydžio.",
-      rating: 4.8,
-      isNew: true,
-      isPopular: true,
-      type: "accessory",
-    },
+
     {
       id: 8,
       name: 'LIPDUKAI "ŽALGIRIS"',
@@ -639,7 +627,7 @@ const Shop = () => {
                 Produktų nerasta
               </h3>
               <p className="text-gray-600 mb-4">
-                Pabandykite pakeisti filtrus arba paieškos žodžius
+                Pabandykite pakeisti filtrus arba paie��kos žodžius
               </p>
               <Button
                 onClick={resetFilters}
