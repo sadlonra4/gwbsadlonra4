@@ -26,7 +26,7 @@ const ShopSection = () => {
   const products = [
     {
       id: 1,
-      name: "ŽALIAI BALTAS IKI KAULų smegenų",
+      name: "ŽALIAI BALTAS IKI KAULŲ SMEGENŲ",
       price: "40€",
       image:
         "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F67232d5c0e83475b85dd5b6b8a303105",
