@@ -122,7 +122,7 @@ const SongsDownload = () => {
           </div>
 
           {/* Song Categories */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 justify-items-center">
             {songCategories.map((category, index) => (
               <Card
                 key={index}
