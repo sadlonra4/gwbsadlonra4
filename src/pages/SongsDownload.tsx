@@ -70,7 +70,7 @@ const SongsDownload = () => {
               Grįžti į pagrindinį
             </Link>
             <h1 className="font-oswald text-2xl md:text-3xl font-bold text-gwb-white">
-              <span className="text-gwb-green">DAINOS</span> ATSISIUNTIMAS
+              <span style={{ color: "#7ED321" }}>SKANDUOČIŲ</span> ATSISIUNTIMAS
             </h1>
           </div>
         </div>
