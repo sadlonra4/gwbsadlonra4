@@ -156,6 +156,108 @@ const SongsDownload = () => {
             ))}
           </div>
 
+          {/* New Anthem Section */}
+          <div className="mb-12">
+            <Card className="border-2 border-gwb-black">
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
+                  <h3 className="font-oswald text-2xl font-bold text-gwb-black mb-4">
+                    NAUJA <span style={{ color: "#7ED321" }}>SKANDUOTĖ</span>
+                  </h3>
+                  <p className="text-gwb-black text-lg mb-6">
+                    "Kai mažas dar labai buvau" - Oficialus Žalgirio himnas
+                  </p>
+                </div>
+
+                <div className="bg-gwb-black rounded-lg p-6 text-gwb-white max-w-4xl mx-auto">
+                  <div className="text-center space-y-4 leading-relaxed">
+                    <div className="text-sm md:text-base">
+                      <p>Kai mažas dar labai buvau</p>
+                      <p>Į Halę vedės tėtis</p>
+                      <p>Išmokė jis tada mane</p>
+                      <p>Kovoti ir tikėti</p>
+                      <p>Ir mes kartojom viens kitam</p>
+                      <p>Atėjo mūsų laikas</p>
+                      <p>Įskiepijo jis man seniai</p>
+                      <p>Žaliai balti dievai</p>
+                    </div>
+
+                    <div className="py-4">
+                      <p
+                        className="font-bold text-lg"
+                        style={{ color: "#7ED321" }}
+                      >
+                        Kovoooooook, kai bus sunku
+                      </p>
+                      <p>Ir negailėk visų jėgų</p>
+                      <p>Juk plaka tūkstančiai širdžių</p>
+                      <p>Dėl šių dviejų brangių spalvų</p>
+                      <p
+                        className="font-bold text-lg"
+                        style={{ color: "#7ED321" }}
+                      >
+                        Kovoooooook, kai bus sunku
+                      </p>
+                      <p>Ir negailėk visų jėgų</p>
+                      <p>Juk plaka tūkstančiai širdžių</p>
+                      <p>Dėl šių dviejų brangių spalvų</p>
+                    </div>
+
+                    <div className="text-sm md:text-base">
+                      <p>Nors metų jau praėjo daug</p>
+                      <p>Ir pats esu jau tėtis</p>
+                      <p>Dabar jau mokau aš</p>
+                      <p>Kad reikia visada tikėti</p>
+                      <p>Šią garbę nešam išdidžiai</p>
+                      <p>Mes iš kartos į kartą</p>
+                      <p>Tegul pavydi mums visi</p>
+                      <p>Mes būsime pirmi</p>
+                    </div>
+
+                    <div className="py-4">
+                      <p
+                        className="font-bold text-lg"
+                        style={{ color: "#7ED321" }}
+                      >
+                        Kovoooooook, kai bus sunku
+                      </p>
+                      <p>Ir negailėk visų jėgų</p>
+                      <p>Juk plaka tūkstančiai širdžių</p>
+                      <p>Dėl šių dviejų brangių spalvų</p>
+                      <p
+                        className="font-bold text-lg"
+                        style={{ color: "#7ED321" }}
+                      >
+                        Kovoooooook, kai bus sunku
+                      </p>
+                      <p>Ir negailėk visų jėgų</p>
+                      <p>Juk plaka tūkstančiai širdžių</p>
+                      <p>Dėl šių dviejų brangių spalvų</p>
+                    </div>
+
+                    <div className="pt-6">
+                      <div
+                        className="text-2xl md:text-3xl font-bold space-y-2"
+                        style={{ color: "#7ED321" }}
+                      >
+                        <p>ŽAL</p>
+                        <p>GI</p>
+                        <p>RIS!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-center mt-6">
+                  <Button className="bg-gwb-black hover:bg-gwb-black/80 text-gwb-white font-semibold">
+                    <Download size={16} className="mr-2" />
+                    Atsisiųsti šią skanduotę
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
           {/* Additional Info */}
           <div className="bg-gray-50 rounded-lg p-8 text-center border-2 border-gwb-black">
             <h3 className="font-oswald text-2xl font-semibold text-gwb-black mb-4">
