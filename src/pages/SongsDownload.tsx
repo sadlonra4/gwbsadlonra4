@@ -158,6 +158,148 @@ IR NIEKADA NEATSIRAS KOMANDŲ GERESNIŲ
 VISI KARTUUUUUU...
 DAR VIENĄ KARTĄĄĄ! (KARTOJAM)`,
     },
+    {
+      id: 13,
+      title: "Pergalės daina",
+      description: "Triumfo ir šventės skandavimas",
+      preview:
+        "SKAMBA PERGALĖS DAINA\nŠVENČIA MŪSŲ TRIBŪNA\nPERGALĖS SPALVA! ŽALIA IR BALTA!\nNUGALĖS KOMANDA MYLIMA",
+      full: `SKAMBA PERGALĖS DAINA
+ŠVENČIA MŪSŲ TRIBŪNA
+PERGALĖS SPALVA! ŽALIA IR BALTA!
+NUGALĖS KOMANDA MYLIMA`,
+    },
+    {
+      id: 14,
+      title: "Ir aš tikiu",
+      description: "Tikėjimo ir vilties daina",
+      preview:
+        "IR AŠ TIKIU! (IR AŠ TIKIU!)\nIR TU TIKI! (IR TU TIKI!)\nKAD ŽALGIRIEČIAI ŠIANDIEN GALI BŪT PIRMI!",
+      full: `IR AŠ TIKIU! (IR AŠ TIKIU!)
+IR TU TIKI! (IR TU TIKI!)
+KAD ŽALGIRIEČIAI ŠIANDIEN GALI BŪT PIRMI! (BŪT PIRMI!)
+TEREIK TIKĖT (TEREIK TIKĖT!)
+PASITIKĖT! (PASITIKĖT!)
+IR TIK TADA PAVYKS ŠIANDIENĄ MUMS LAIMÉÉÉT
+ŽALIAI BALTI... ŠIRDY VIENI...
+MES VISADOS, VISADOS IŠTIKIMI...`,
+    },
+    {
+      id: 15,
+      title: "Man nuo vaikystės",
+      description: "Gyvenimo filosofijos ir atsidavimo daina",
+      preview:
+        "MAN NUO VAIKYSTĖS\nĮ GALVĄ ĮKALTA\nSPALVOS GRAŽIAUSIOS\nTAI ŽALIA BALTA",
+      full: `MAN NUO VAIKYSTĖS
+Į GALVĄ ĮKALTA
+SPALVOS GRAŽIAUSIOS
+TAI ŽALIA BALTA
+GERIAU NEMIEGOSIU
+IR NEISIU Į DARBĄ
+BET PALAIKYSIU SAVO KOMANDĄ!
+ŽALGIRIS..
+ŽALGIRIS..
+ŽALGIRIS..
+ŽALGIRIS..
+ŽALGIRIS..
+ŽALGIRIS..`,
+    },
+    {
+      id: 16,
+      title: "Žalioj stotelėje",
+      description: "Fanų susibūrimo ir šventės daina",
+      preview:
+        "ŽALIOJ STOTELĖJE\nŽALGIRIO FANAI STRINGA\nIR JŲ LINKĖJIMAI ŽALIAI BALTI!",
+      full: `ŽALIOJ STOTELĖJE
+ŽALGIRIO FANAI STRINGA
+IR JŲ LINKĖJIMAI ŽALIAI BALTI!
+ŽALIOJ STOTELĖJE MES ŠVENČIAM PERGALES!
+IR MŪSŲ VĖLIAVOS
+PLAZDĖS, PLAZDÉS`,
+    },
+    {
+      id: 17,
+      title: "Tik žalia ir balta",
+      description: "Spalvų šlovinimo ir pergalės himnas",
+      preview:
+        "TIK ŽALIAAAA IR BALTAAAAA!\nŠITOS DVI GRAŽIAUSIOS SPALVOS\nAMŽINAI BUS ŠIRDYJE!",
+      full: `TIK ŽALIAAAA IR BALTAAAAA!
+ŠITOS DVI GRAŽIAUSIOS SPALVOS
+AMŽINAI BUS ŠIRDYJE!
+MES PIRMI! VISADA!
+JEIGU JŪS TUO PATIKĖSIT,
+NUGALĖSIM MES BET KA (PLOJIMAI)
+LALALALALALALALALALA`,
+    },
+    {
+      id: 18,
+      title: "Žalgiris olė",
+      description: "Klasikinis palaikymo šauksmas",
+      preview:
+        "OLĖ OLĖ ŽALGIRIS OLĖ\nMES VISADA KARTU\nKUR BEŽAISTUM TU\nŽALGIRIS OLĖ",
+      full: `OLĖ OLĖ ŽALGIRIS OLĖ
+MES VISADA KARTU
+KUR BEŽAISTUM TU
+ŽALGIRIS OLĖ (KARTOJAM)`,
+    },
+    {
+      id: 19,
+      title: "Tai buvo tie laikai",
+      description: "Nostalgijos ir tradicijų daina",
+      preview:
+        "TAI BUVO TIE LAIKAI\nΚΑΙ BUVOME VAIKAI\nEUROPOJE NEBUVO MUMS LYGIŲ",
+      full: `TAI BUVO TIE LAIKAI
+ΚΑΙ BUVOME VAIKAI
+EUROPOJE NEBUVO MUMS LYGIŲ
+BET METAI BĖGA GREIT
+IR DAUG KAS KEIČIASI
+BET SU KOMANDA VISADA KARTU
+LAI LAI LAI LAI LA LAI`,
+    },
+    {
+      id: 20,
+      title: "Mūsų vėliavos plazdės",
+      description: "Antifon ritualo skandavimas",
+      preview:
+        "VIENAS: MŪSŲ VĖLIAVOS PLAZDĖS!\nVISI: MŪSŲ VĖLIAVOS PLAZDĖS!\nVIENAS: ŠIANDIEN ŽALGIRIS LAIMĖS!",
+      full: `VIENAS: MŪSŲ VĖLIAVOS PLAZDĖS!
+VISI: MŪSŲ VĖLIAVOS PLAZDĖS!
+VIENAS: ŠIANDIEN ŽALGIRIS LAIMĖS!
+VISI: ŠIANDIEN ŽALGIRIS LAIMĖS!
+VIENAS: PAVYDĖSIT MUMS VISI!
+VISI: PAVYDESIT MUMS VISI!
+VIENAS: ŠIEMET BŪSIME PIRMI!
+VISI: ŠIEMET BŪSIME PIRMI!
+VIENAS: MES PIRMI!
+VISI: MES PIRMI!
+VIENAS: VISADA!
+VISI: VISADA!
+VIENAS: NUGALĖSIM!
+VISI: NUGALĖSIM!
+VIENAS: MES BET KĄ!
+VISI: MES BET KA
+VISI: MES ŠIANDIENĄ NUGALĖSIM, MES ŠIANDIENĄ NUGALĖSIM, MES ŠIANDIENĄ NUGALĖSIM, NIEKAS MŪS NESULAIKYS, HEY HEY HEY!`,
+    },
+    {
+      id: 21,
+      title: "Ooo žaliai balti",
+      description: "Stiprybės ir tikėjimo finale",
+      preview:
+        "OOOOO ŽALIAI BALTI...\nNET SUNKIAUSIOJ KOVOJE VISAD TVIRTI...\nNES AŠ TIKIU... IR TU TIKI...",
+      full: `OOOOO ŽALIAI BALTI...
+NET SUNKIAUSIOJ KOVOJE VISAD TVIRTI...
+NES AŠ TIKIU...
+IR TU TIKI...
+KAD SU MUMIS TU PRALAIMĖTI NEGALI!
+ŽALIAI BALTI...
+ŠIRDY VIENI...
+MES VISADOS,
+VISADOS IŠTIKIMI...
+TEREIK TIKĖT...
+PASITIKĖT...
+IR TIK TADA PAVYKS ŠIANDIENĄ MUMS LAIMĖT!
+(MUMS LAIMĖT!)`,
+    },
   ];
 
   const songCategories = [
