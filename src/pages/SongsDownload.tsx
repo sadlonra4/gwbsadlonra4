@@ -416,38 +416,6 @@ IR TIK TADA PAVYKS ŠIANDIENĄ MUMS LAIMĖT!
             )}
           </div>
 
-          {/* Song Categories */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 justify-items-center">
-            {songCategories.map((category, index) => (
-              <Card
-                key={index}
-                className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300"
-              >
-                <CardContent className="p-6 text-center">
-                  <h3 className="font-oswald text-lg font-semibold text-gwb-black mb-3">
-                    {category.title}
-                  </h3>
-                  <p
-                    className="text-3xl font-bold mb-3"
-                    style={{ color: "#a3e635" }}
-                  >
-                    {category.count}
-                  </p>
-                  <div className="space-y-1">
-                    {category.songs.slice(0, 3).map((song, songIndex) => (
-                      <p key={songIndex} className="text-xs text-gray-600">
-                        {song}
-                      </p>
-                    ))}
-                    {category.songs.length > 3 && (
-                      <p className="text-xs text-gray-400">ir daugiau...</p>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
           {/* Individual Chants Collection */}
           <div className="mb-12">
             <div className="text-center mb-8">
