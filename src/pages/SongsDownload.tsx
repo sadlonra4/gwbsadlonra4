@@ -239,7 +239,7 @@ DAR VIENĄ KARTĄĄĄ! (KARTOJAM)`,
                 VISOS <span style={{ color: "#7ED321" }}>GWB</span> SKANDUOTĖS
               </h2>
               <p className="text-gwb-black text-lg max-w-2xl mx-auto">
-                Atsisi��sk visą GWB dainų kolekciją ir dainuok kartu su mumis
+                Atsisiųsk visą GWB dainų kolekciją ir dainuok kartu su mumis
                 arenoje! Čia rasite visus himnus, palaikymo dainas ir
                 choreografijų melodijas.
               </p>
@@ -410,7 +410,8 @@ DAR VIENĄ KARTĄĄĄ! (KARTOJAM)`,
                     Oficialus himnas
                   </h3>
                   <p className="text-gwb-black text-lg mb-6">
-                    "Žaliai Balti Dievai" - Oficialus Žalgirio himnas
+                    "Justinas Jarutis - Žaliai Balti Dievai" - Oficialus
+                    Žalgirio himnas
                   </p>
                 </div>
 
