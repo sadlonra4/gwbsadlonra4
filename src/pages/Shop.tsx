@@ -21,7 +21,8 @@ import { Slider } from "@/components/ui/slider";
 import { useCart } from "@/contexts/CartContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import CartSummary from "@/components/CartSummary";
-import ProductDetailModal, { Product } from "@/components/ProductDetailModal";
+import ProductDetailModal from "@/components/ProductDetailModal";
+import { products, Product } from "@/data/products";
 
 interface FilterState {
   priceRange: [number, number];
