@@ -68,6 +68,17 @@ const ProductDetailModal = ({
     setImageScale((prev) => Math.max(prev - 0.5, 0.5));
   };
 
+  const handleWheelZoom = (e: React.WheelEvent) => {
+    e.preventDefault();
+    if (e.deltaY < 0) {
+      // Scroll up - zoom in
+      handleZoomIn();
+    } else {
+      // Scroll down - zoom out
+      handleZoomOut();
+    }
+  };
+
   const handleClose = () => {
     resetSelection();
     onClose();
