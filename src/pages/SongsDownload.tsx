@@ -54,7 +54,7 @@ O ŽALGIRI, JUK TU ŽINAI TAVE MYLIU!`,
         "ŠIANDIEN YRA, MŪSŲ DIENA\nPERGALĖ MUMS RANKA PASIEKIAMA\nSKAMBA LINKSMAI MŪSŲ DAINA\nŽALGIRIO VARDAS MŪSŲ ŠIRDYSE",
       full: `ŠIANDIEN YRA, MŪSŲ DIENA
 PERGALĖ MUMS RANKA PASIEKIAMA
-SKAMBA LINKSMAI MŪSŲ DAINA
+SKAMBA LINKSMAI M��SŲ DAINA
 ŽALGIRIO VARDAS MŪSŲ ŠIRDYSE
 LALALA LAI LALALA LAI (3X)`,
     },
@@ -320,236 +320,53 @@ DAR VIENĄ KARTĄĄĄ! (KARTOJAM)`,
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {/* Chant Cards */}
-              <Card className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-4">
-                  <h4 className="font-oswald text-lg font-bold text-gwb-black mb-2">
-                    Žalgiri, myliu
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Meilės išpažinimo daina savo komandai
-                  </p>
-                  <div className="bg-gray-50 p-3 rounded text-xs">
-                    <p>
-                      <strong>ŽALGIRI, MYLIU</strong>
-                    </p>
-                    <p>GALBŪT LABIAU, GALBŪT LABIAU,</p>
-                    <p>NEI TU MANE MYLI</p>
-                    <p>AUKOJU VISKĄ TAU...</p>
-                  </div>
-                </CardContent>
-              </Card>
+              {chants.map((chant) => {
+                const isExpanded = expandedCards.includes(chant.id);
+                return (
+                  <Card
+                    key={chant.id}
+                    className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    onClick={() => toggleCard(chant.id)}
+                  >
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="font-oswald text-lg font-bold text-gwb-black">
+                          {chant.title}
+                        </h4>
+                        <ChevronDown
+                          size={20}
+                          className={`text-gwb-black transition-transform duration-200 ${
+                            isExpanded ? "rotate-180" : ""
+                          }`}
+                        />
+                      </div>
+                      <p className="text-sm text-gray-600 mb-3">
+                        {chant.description}
+                      </p>
 
-              <Card className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-4">
-                  <h4 className="font-oswald text-lg font-bold text-gwb-black mb-2">
-                    Šiandieną susirinkom
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Susibūrimo ir vienybės skandavimas
-                  </p>
-                  <div className="bg-gray-50 p-3 rounded text-xs">
-                    <p>
-                      <strong>ŠIANDIENĄ SUSIRINKOM - DĖL ŠIŲ SPALVŲ</strong>
-                    </p>
-                    <p>PASAULYJE GRAŽIAUSIŲ - ŽALIAI BALTŲ</p>
-                    <p>VISI KARTU DAINUOSIM NES MUMS SVARBU</p>
-                    <p>O ŽALGIRI, JUK TU ŽINAI TAVE MYLIU!</p>
-                  </div>
-                </CardContent>
-              </Card>
+                      <div className="bg-gray-50 p-3 rounded text-xs">
+                        {isExpanded ? (
+                          <div className="whitespace-pre-line font-mono">
+                            {chant.full}
+                          </div>
+                        ) : (
+                          <div className="whitespace-pre-line">
+                            {chant.preview}
+                          </div>
+                        )}
+                      </div>
 
-              <Card className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-4">
-                  <h4 className="font-oswald text-lg font-bold text-gwb-black mb-2">
-                    Šiandien yra mūsų diena
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Optimizmo ir pergalės daina
-                  </p>
-                  <div className="bg-gray-50 p-3 rounded text-xs">
-                    <p>
-                      <strong>ŠIANDIEN YRA, MŪSŲ DIENA</strong>
-                    </p>
-                    <p>PERGALĖ MUMS RANKA PASIEKIAMA</p>
-                    <p>SKAMBA LINKSMAI MŪSŲ DAINA</p>
-                    <p>ŽALGIRIO VARDAS MŪSŲ ŠIRDYSE</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-4">
-                  <h4 className="font-oswald text-lg font-bold text-gwb-black mb-2">
-                    Atsistokite visi
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Mobilizacijos ir palaikymo šauksmas
-                  </p>
-                  <div className="bg-gray-50 p-3 rounded text-xs">
-                    <p>
-                      <strong>ATSISTOKITE VISI VISI</strong>
-                    </p>
-                    <p>JEI PALAIKOT KAUNO ŽALGIRĮ</p>
-                    <p>REZULTATAS MUMS NĖRA SVARBUS</p>
-                    <p>MES PALAIKOME ŽALIAI BALTUS</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-4">
-                  <h4 className="font-oswald text-lg font-bold text-gwb-black mb-2">
-                    Žalgiris - Lietuva
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Patriotinis antifon šaukimas
-                  </p>
-                  <div className="bg-gray-50 p-3 rounded text-xs">
-                    <p>
-                      <strong>ŽALGIRIS (VIENAS) ŽALGIRIS (VISI)</strong>
-                    </p>
-                    <p>LIETUVA (VIENAS) LIETUVA (VISI)</p>
-                    <p>ŠIE DU ŽODŽIAI ŠIRDYJE</p>
-                    <p>IR NUGALĖSIM MES BET KĄ</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-4">
-                  <h4 className="font-oswald text-lg font-bold text-gwb-black mb-2">
-                    Ten kur Nemunas ir Neris
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Geografinis ir istorinis skandavimas
-                  </p>
-                  <div className="bg-gray-50 p-3 rounded text-xs">
-                    <p>
-                      <strong>TEN KUR NEMUNAS IR NERIS,</strong>
-                    </p>
-                    <p>TEN ŽAIDŽIA ŽALGIRIS,</p>
-                    <p>OLĖ OLĖ ŽALIAI BALTI</p>
-                    <p>VĖL BUS PIRMI</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-4">
-                  <h4 className="font-oswald text-lg font-bold text-gwb-black mb-2">
-                    O vieną gražią dieną
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Meilės ir ištikimybės išpažinimas
-                  </p>
-                  <div className="bg-gray-50 p-3 rounded text-xs">
-                    <p>
-                      <strong>O VIENĄ GRAŽIĄ DIENĄ</strong>
-                    </p>
-                    <p>AŠ PAMILAU TAVE</p>
-                    <p>TIKĖJOME IR TIKIM</p>
-                    <p>ATEINANČIA ŠLOVE</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-4">
-                  <h4 className="font-oswald text-lg font-bold text-gwb-black mb-2">
-                    Pergalės daina
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Triumfo ir šventės skandavimas
-                  </p>
-                  <div className="bg-gray-50 p-3 rounded text-xs">
-                    <p>
-                      <strong>SKAMBA PERGALĖS DAINA</strong>
-                    </p>
-                    <p>ŠVENČIA MŪSŲ TRIBŪNA</p>
-                    <p>PERGALĖS SPALVA! ŽALIA IR BALTA!</p>
-                    <p>NUGALĖS KOMANDA MYLIMA</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-4">
-                  <h4 className="font-oswald text-lg font-bold text-gwb-black mb-2">
-                    Man nuo vaikystės
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Gyvenimo filosofijos daina
-                  </p>
-                  <div className="bg-gray-50 p-3 rounded text-xs">
-                    <p>
-                      <strong>MAN NUO VAIKYSTĖS</strong>
-                    </p>
-                    <p>Į GALVĄ ĮKALTA</p>
-                    <p>SPALVOS GRAŽIAUSIOS</p>
-                    <p>TAI ŽALIA BALTA</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-4">
-                  <h4 className="font-oswald text-lg font-bold text-gwb-black mb-2">
-                    Tik žalia ir balta
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Spalvų šlovinimo himnas
-                  </p>
-                  <div className="bg-gray-50 p-3 rounded text-xs">
-                    <p>
-                      <strong>TIK ŽALIAAAA IR BALTAAAAA!</strong>
-                    </p>
-                    <p>ŠITOS DVI GRAŽIAUSIOS SPALVOS</p>
-                    <p>AMŽINAI BUS ŠIRDYJE!</p>
-                    <p>MES PIRMI! VISADA!</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-4">
-                  <h4 className="font-oswald text-lg font-bold text-gwb-black mb-2">
-                    Mūsų vėliavos plazdės
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Antifon ritualo skandavimas
-                  </p>
-                  <div className="bg-gray-50 p-3 rounded text-xs">
-                    <p>
-                      <strong>VIENAS: MŪSŲ VĖLIAVOS PLAZDĖS!</strong>
-                    </p>
-                    <p>
-                      <strong>VISI: MŪSŲ VĖLIAVOS PLAZDĖS!</strong>
-                    </p>
-                    <p>VIENAS: ŠIANDIEN ŽALGIRIS LAIMĖS!</p>
-                    <p>VISI: ŠIANDIEN ŽALGIRIS LAIMĖS!</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-4">
-                  <h4 className="font-oswald text-lg font-bold text-gwb-black mb-2">
-                    Ooo žaliai balti
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Stiprybės ir tikėjimo daina
-                  </p>
-                  <div className="bg-gray-50 p-3 rounded text-xs">
-                    <p>
-                      <strong>OOOOO ŽALIAI BALTI...</strong>
-                    </p>
-                    <p>NET SUNKIAUSIOJ KOVOJE VISAD TVIRTI...</p>
-                    <p>NES AŠ TIKIU... IR TU TIKI...</p>
-                    <p>KAD SU MUMIS TU PRALAIMĖTI NEGALI!</p>
-                  </div>
-                </CardContent>
-              </Card>
+                      <div className="mt-3 text-xs text-center">
+                        <span className="text-gray-500">
+                          {isExpanded
+                            ? "Paspaudėte, kad suskleisti"
+                            : "Paspaudėte, kad išskleisti"}
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
 
             <div className="text-center">
