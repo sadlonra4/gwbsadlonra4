@@ -11,25 +11,18 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Minus, Plus, ShoppingCart, Star } from "lucide-react";
+import {
+  Minus,
+  Plus,
+  ShoppingCart,
+  Star,
+  ZoomIn,
+  ZoomOut,
+  X,
+} from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-export interface Product {
-  id: number;
-  name: string;
-  price: string;
-  category: string;
-  image: string;
-  description: string;
-  rating: number;
-  isNew: boolean;
-  isPopular: boolean;
-  isSoldOut?: boolean;
-  type: "clothing" | "sticker" | "accessory" | "other";
-  sizes?: string[];
-  colors?: string[];
-}
+import { Product } from "@/data/products";
 
 interface ProductDetailModalProps {
   product: Product | null;
