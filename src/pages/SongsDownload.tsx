@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Download, Music, ArrowLeft } from "lucide-react";
+import { Download, Music, ArrowLeft, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -627,7 +627,7 @@ DAR VIENĄ KARTĄĄĄ! (KARTOJAM)`,
                       </p>
                       <p>Ir negailėk visų jėgų</p>
                       <p>Juk plaka tūkstančiai širdžių</p>
-                      <p>Dėl ��ių dviejų brangių spalvų</p>
+                      <p>Dėl šių dviejų brangių spalvų</p>
                       <p
                         className="font-bold text-lg"
                         style={{ color: "#7ED321" }}
