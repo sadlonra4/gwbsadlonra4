@@ -239,7 +239,7 @@ DAR VIENĄ KARTĄĄĄ! (KARTOJAM)`,
                 VISOS <span style={{ color: "#7ED321" }}>GWB</span> SKANDUOTĖS
               </h2>
               <p className="text-gwb-black text-lg max-w-2xl mx-auto">
-                Atsisiųsk visą GWB dainų kolekciją ir dainuok kartu su mumis
+                Atsisi��sk visą GWB dainų kolekciją ir dainuok kartu su mumis
                 arenoje! Čia rasite visus himnus, palaikymo dainas ir
                 choreografijų melodijas.
               </p>
@@ -417,14 +417,14 @@ DAR VIENĄ KARTĄĄĄ! (KARTOJAM)`,
                 <div className="bg-gwb-black rounded-lg p-6 text-gwb-white max-w-4xl mx-auto">
                   <div className="text-center space-y-4 leading-relaxed">
                     <div className="text-sm md:text-base">
-                      <p>Kai mažas dar labai buvau</p>
-                      <p>Į Halę vedės tėtis</p>
-                      <p>Išmokė jis tada mane</p>
-                      <p>Kovoti ir tikėti</p>
-                      <p>Ir mes kartojom viens kitam</p>
-                      <p>Atėjo mūsų laikas</p>
-                      <p>Įskiepijo jis man seniai</p>
-                      <p>Žaliai balti dievai</p>
+                      <p>ΚΑΙ MAŽAS DAR LABAI BUVAU</p>
+                      <p>Į HALĘ VEDĖS TĖTIS</p>
+                      <p>IŠMOKĖ JIS TADA MANE</p>
+                      <p>KOVOTI IR TIKĖTI</p>
+                      <p>IR MES KARTOJOM VIENS KITAM</p>
+                      <p>ATĖJO MŪSŲ LAIKAS</p>
+                      <p>ĮSKIEPIJO JIS MAN SENIAI</p>
+                      <p>ŽALIAI BALTI DIEVAI</p>
                     </div>
 
                     <div className="py-4">
@@ -432,31 +432,22 @@ DAR VIENĄ KARTĄĄĄ! (KARTOJAM)`,
                         className="font-bold text-lg"
                         style={{ color: "#7ED321" }}
                       >
-                        Kovoooooook, kai bus sunku
+                        KOVOK ΚΑΙ BUS SUNKU
                       </p>
-                      <p>Ir negailėk visų jėgų</p>
-                      <p>Juk plaka tūkstančiai širdžių</p>
-                      <p>Dėl šių dviejų brangių spalvų</p>
-                      <p
-                        className="font-bold text-lg"
-                        style={{ color: "#7ED321" }}
-                      >
-                        Kovoooooook, kai bus sunku
-                      </p>
-                      <p>Ir negailėk visų jėgų</p>
-                      <p>Juk plaka tūkstančiai širdžių</p>
-                      <p>Dėl šių dviejų brangių spalvų</p>
+                      <p>IR NEGAILĖK VISŲ JĖGŲ</p>
+                      <p>JUK PLAKA TŪKSTANČIAI ŠIRDŽIŲ</p>
+                      <p>DĖL ŠIŲ DVIEJŲ BRANGIŲ SPALVŲ (2X)</p>
                     </div>
 
                     <div className="text-sm md:text-base">
-                      <p>Nors metų jau praėjo daug</p>
-                      <p>Ir pats esu jau tėtis</p>
-                      <p>Dabar jau mokau aš</p>
-                      <p>Kad reikia visada tikėti</p>
-                      <p>Šią garbę nešam išdidžiai</p>
-                      <p>Mes iš kartos į kartą</p>
-                      <p>Tegul pavydi mums visi</p>
-                      <p>Mes būsime pirmi</p>
+                      <p>NORS METŲ JAU PRAĖJO DAUG</p>
+                      <p>IR PATS ESU JAU TĖTIS</p>
+                      <p>DABAR JAU MOKAU AŠ</p>
+                      <p>KAD REIKIA VISADA TIKĖTI</p>
+                      <p>ŠIĄ GARBĘ NEŠAM IŠDIDŽIAI</p>
+                      <p>MES IŠ KARTOS Į KARTĄ</p>
+                      <p>TEGUL PAVYDI MUMS VISI</p>
+                      <p>MES BŪSIME PIRMI</p>
                     </div>
 
                     <div className="py-4">
@@ -464,31 +455,11 @@ DAR VIENĄ KARTĄĄĄ! (KARTOJAM)`,
                         className="font-bold text-lg"
                         style={{ color: "#7ED321" }}
                       >
-                        Kovoooooook, kai bus sunku
+                        KOVOK ΚΑΙ BUS SUNKU
                       </p>
-                      <p>Ir negailėk visų jėgų</p>
-                      <p>Juk plaka tūkstančiai širdžių</p>
-                      <p>Dėl šių dviejų brangių spalvų</p>
-                      <p
-                        className="font-bold text-lg"
-                        style={{ color: "#7ED321" }}
-                      >
-                        Kovoooooook, kai bus sunku
-                      </p>
-                      <p>Ir negailėk visų jėgų</p>
-                      <p>Juk plaka tūkstančiai širdžių</p>
-                      <p>Dėl šių dviejų brangių spalvų</p>
-                    </div>
-
-                    <div className="pt-6">
-                      <div
-                        className="text-2xl md:text-3xl font-bold space-y-2"
-                        style={{ color: "#7ED321" }}
-                      >
-                        <p>ŽAL</p>
-                        <p>GI</p>
-                        <p>RIS!</p>
-                      </div>
+                      <p>IR NEGAILĖK VISŲ JĖGŲ</p>
+                      <p>JUK PLAKA TŪKSTANČIAI ŠIRDŽIŲ</p>
+                      <p>DĖL ŠIŲ DVIEJŲ BRANGIŲ SPALVŲ (2X)</p>
                     </div>
                   </div>
                 </div>
