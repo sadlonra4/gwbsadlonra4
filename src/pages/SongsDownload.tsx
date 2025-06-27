@@ -8,6 +8,158 @@ const SongsDownload = () => {
   const [downloadStarted, setDownloadStarted] = useState(false);
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
 
+  const toggleCard = (cardId: number) => {
+    setExpandedCards((prev) =>
+      prev.includes(cardId)
+        ? prev.filter((id) => id !== cardId)
+        : [...prev, cardId],
+    );
+  };
+
+  const chants = [
+    {
+      id: 1,
+      title: "Žalgiri, myliu",
+      description: "Meilės išpažinimo daina savo komandai",
+      preview:
+        "ŽALGIRI, MYLIU\nGALBŪT LABIAU, GALBŪT LABIAU,\nNEI TU MANE MYLI\nAUKOJU VISKĄ TAU...",
+      full: `ŽALGIRI, MYLIU
+GALBŪT LABIAU, GALBŪT LABIAU,
+NEI TU MANE MYLI
+AUKOJU VISKĄ TAU
+GALBŪT DAUGIAU NEGU AUKOJI TU MAN
+IR LAUKIU AŠ TAVĘS
+GALBŪT LABIAU GALBŪT LABIAU,
+NEI TU MANĘS LAUKI
+IR DĖL TAVĘS BIJAU
+GALBŪT DAUGIAU NEGU TU DĖL MANĘS BIJAI
+LA LA LA LA...`,
+    },
+    {
+      id: 2,
+      title: "Šiandieną susirinkom",
+      description: "Susibūrimo ir vienybės skandavimas",
+      preview:
+        "ŠIANDIENĄ SUSIRINKOM - DĖL ŠIŲ SPALVŲ\nPASAULYJE GRAŽIAUSIŲ - ŽALIAI BALTŲ\nVISI KARTU DAINUOSIM NES MUMS SVARBU\nO ŽALGIRI, JUK TU ŽINAI TAVE MYLIU!",
+      full: `ŠIANDIENĄ SUSIRINKOM - DĖL ŠIŲ SPALVŲ
+PASAULYJE GRAŽIAUSIŲ - ŽALIAI BALTŲ
+VISI KARTU DAINUOSIM NES MUMS SVARBU
+O ŽALGIRI, JUK TU ŽINAI TAVE MYLIU!`,
+    },
+    {
+      id: 3,
+      title: "Šiandien yra mūsų diena",
+      description: "Optimizmo ir pergalės daina",
+      preview:
+        "ŠIANDIEN YRA, MŪSŲ DIENA\nPERGALĖ MUMS RANKA PASIEKIAMA\nSKAMBA LINKSMAI MŪSŲ DAINA\nŽALGIRIO VARDAS MŪSŲ ŠIRDYSE",
+      full: `ŠIANDIEN YRA, MŪSŲ DIENA
+PERGALĖ MUMS RANKA PASIEKIAMA
+SKAMBA LINKSMAI MŪSŲ DAINA
+ŽALGIRIO VARDAS MŪSŲ ŠIRDYSE
+LALALA LAI LALALA LAI (3X)`,
+    },
+    {
+      id: 4,
+      title: "Atsistokite visi",
+      description: "Mobilizacijos ir palaikymo šauksmas",
+      preview:
+        "ATSISTOKITE VISI VISI\nJEI PALAIKOT KAUNO ŽALGIRĮ\nREZULTATAS MUMS NĖRA SVARBUS\nMES PALAIKOME ŽALIAI BALTUS",
+      full: `ATSISTOKITE VISI VISI
+JEI PALAIKOT KAUNO ŽALGIRĮ
+REZULTATAS MUMS NĖRA SVARBUS
+MES PALAIKOME ŽALIAI BALTUS`,
+    },
+    {
+      id: 5,
+      title: "Žalgiris - Lietuva",
+      description: "Patriotinis antifon šaukimas",
+      preview:
+        "ŽALGIRIS (VIENAS) ŽALGIRIS (VISI)\nLIETUVA (VIENAS) LIETUVA (VISI)\nŠIE DU ŽODŽIAI ŠIRDYJE\nIR NUGALĖSIM MES BET KĄ",
+      full: `ŽALGIRIS (VIENAS) ŽALGIRIS (VISI)
+ŽALGIRIS (VIENAS) LIETUVA (VISI)
+LIETUVA (VIENAS) ŠIE DU ŽODŽIAI ŠIRDYJE (VISI)
+ŠIRDYJE (VIENAS) ŽALGIRIS (VISI)
+ŽALGIRIS (VIENAS) LIETUVA (VISI)
+LIETUVA (VISI) IR NUGALĖSIM MES BET KĄ
+OUU OUUU OUOUOUOU`,
+    },
+    {
+      id: 6,
+      title: "Žaliai balti",
+      description: "Spalvų šaukimas su graikišku akcentu",
+      preview: "ŽALIAI BALTI ΝΑ ΝΑ ΝΑ ΝΑ ΝΑ\nOOO ŽALIAI BALTI ΝΑ ΝΑ ΝΑ",
+      full: `ŽALIAI BALTI ΝΑ ΝΑ ΝΑ ΝΑ ΝΑ
+OOO ŽALIAI BALTI ΝΑ ΝΑ ΝΑ`,
+    },
+    {
+      id: 7,
+      title: "Žalia balta",
+      description: "Trumpas energingas šauksmas",
+      preview: "ŽALIA BALTA, ŽALIA BALTA HEY HEY!",
+      full: `ŽALIA BALTA, ŽALIA BALTA HEY HEY!`,
+    },
+    {
+      id: 8,
+      title: "Ten kur Nemunas ir Neris",
+      description: "Geografinis ir istorinis skandavimas",
+      preview:
+        "TEN KUR NEMUNAS IR NERIS,\nTEN ŽAIDŽIA ŽALGIRIS,\nOLĖ OLĖ ŽALIAI BALTI\nVĖL BUS PIRMI",
+      full: `TEN KUR NEMUNAS IR NERIS,
+TEN ŽAIDŽIA ŽALGIRIS,
+OLĖ OLĖ ŽALIAI BALTI VĖL BUS PIRMI`,
+    },
+    {
+      id: 9,
+      title: "Šventė arenoj vyksta",
+      description: "Arena šventės skandavimas",
+      preview:
+        "ŠVENTĖ ARENOJ VYKSTA\nO ŽALIA BALTA - MŪSŲ ŠIRDYSE\nŽALGIRIS MAN VISKAS",
+      full: `ŠVENTĖ ARENOJ VYKSTA
+O ŽALIA BALTA - MŪSŲ ŠIRDYSE
+ŽALGIRIS MAN VISKAS
+ŠIANDIENĄ SKAMBA ITALO DISCO
+GALIU KARTOTI IR KARTOTI NESUKLYSIU`,
+    },
+    {
+      id: 10,
+      title: "O vieną gražią dieną",
+      description: "Meilės ir ištikimybės išpažinimas",
+      preview:
+        "O VIENĄ GRAŽIĄ DIENĄ\nAŠ PAMILAU TAVE\nTIKĖJOME IR TIKIM\nATEINANČIA ŠLOVE",
+      full: `O VIENĄ GRAŽIĄ DIENĄ
+AŠ PAMILAU TAVE
+TIKĖJOME IR TIKIM
+ATEINANČIA ŠLOVE
+O MŪSŲ SPALVA - ŽALIAI BALTA
+JUMS IŠTIKIMA - ŠI TRIBŪNA
+OLE OLE OLE (4X)`,
+    },
+    {
+      id: 11,
+      title: "Tik žalios gėlės kris",
+      description: "Atsidavimo ir aukos daina",
+      preview:
+        "NĖRA PRASMĖS GYVENTI, JEI TAVĘS NEMATAUUU,\nAŠ VISKĄ PAAUKOSIU, DAINUOSIU DAINAS TAU",
+      full: `NĖRA PRASMĖS GYVENTI, JEI TAVĘS NEMATAUUU,
+AŠ VISKĄ PAAUKOSIU, DAINUOSIU DAINAS TAU
+JEI TEKS MAN PASIRINKTI, AR TU, AR MAN MIRTIS
+TIKIUOS ANΤ ΜΑΝΟ ΚΑΡΟ TIK ŽALIOS GĖLĖS KRIS`,
+    },
+    {
+      id: 12,
+      title: "Visad ginsim garbę",
+      description: "Garbės ir išdidumo daina",
+      preview:
+        "VISAD GINSIM GARBĘ\nMES TIKTAI ŽALIAI BALTŲ\nOOO ŽALIA BALTA...",
+      full: `VISAD GINSIM GARBĘ
+MES TIKTAI ŽALIAI BALTŲ
+OOO ŽALIA BALTA...
+IR NIEKADA NEATSIRAS KOMANDŲ GERESNIŲ
+VISI KARTUUUUUU...
+DAR VIENĄ KARTĄĄĄ! (KARTOJAM)`,
+    },
+  ];
+
   const songCategories = [
     {
       title: "Palaikymo skanduotės",
@@ -475,7 +627,7 @@ const SongsDownload = () => {
                       </p>
                       <p>Ir negailėk visų jėgų</p>
                       <p>Juk plaka tūkstančiai širdžių</p>
-                      <p>Dėl šių dviejų brangių spalvų</p>
+                      <p>Dėl ��ių dviejų brangių spalvų</p>
                       <p
                         className="font-bold text-lg"
                         style={{ color: "#7ED321" }}
