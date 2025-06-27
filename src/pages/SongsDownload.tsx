@@ -418,17 +418,6 @@ IR TIK TADA PAVYKS ŠIANDIENĄ MUMS LAIMĖT!
 
           {/* Individual Chants Collection */}
           <div className="mb-12">
-            <div className="text-center mb-8">
-              <h3 className="font-oswald text-3xl font-bold text-gwb-black mb-4">
-                INDIVIDUALŪS{" "}
-                <span style={{ color: "#7ED321" }}>SKANDAVIMAI</span>
-              </h3>
-              <p className="text-gwb-black text-lg">
-                Pilna kolekcija visų GWB skandavimų ir dainų, kurias galite
-                dainuoti arenoje
-              </p>
-            </div>
-
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {chants.map((chant, index) => {
                 const isExpanded = expandedCards.includes(chant.id);
