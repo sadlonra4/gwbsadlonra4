@@ -333,7 +333,10 @@ const ProductDetailModal = ({
           className="fixed inset-0 z-[100] bg-black bg-opacity-95 flex items-center justify-center"
           onClick={handleZoomClose}
         >
-          <div className="relative max-w-[95vw] max-h-[95vh] overflow-auto">
+          <div
+            className="relative max-w-[95vw] max-h-[95vh] overflow-auto"
+            onWheel={handleWheelZoom}
+          >
             <img
               src={product.image}
               alt={product.name}
