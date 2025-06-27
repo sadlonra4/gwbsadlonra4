@@ -11,25 +11,18 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Minus, Plus, ShoppingCart, Star } from "lucide-react";
+import {
+  Minus,
+  Plus,
+  ShoppingCart,
+  Star,
+  ZoomIn,
+  ZoomOut,
+  X,
+} from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-export interface Product {
-  id: number;
-  name: string;
-  price: string;
-  category: string;
-  image: string;
-  description: string;
-  rating: number;
-  isNew: boolean;
-  isPopular: boolean;
-  isSoldOut?: boolean;
-  type: "clothing" | "sticker" | "accessory" | "other";
-  sizes?: string[];
-  colors?: string[];
-}
+import { Product } from "@/data/products";
 
 interface ProductDetailModalProps {
   product: Product | null;
@@ -73,6 +66,17 @@ const ProductDetailModal = ({
 
   const handleZoomOut = () => {
     setImageScale((prev) => Math.max(prev - 0.5, 0.5));
+  };
+
+  const handleWheelZoom = (e: React.WheelEvent) => {
+    e.preventDefault();
+    if (e.deltaY < 0) {
+      // Scroll up - zoom in
+      handleZoomIn();
+    } else {
+      // Scroll down - zoom out
+      handleZoomOut();
+    }
   };
 
   const handleClose = () => {
@@ -326,20 +330,24 @@ const ProductDetailModal = ({
       {/* Image Zoom Modal */}
       {isImageZoomed && (
         <div
-          className="fixed inset-0 z-[100] bg-black bg-opacity-90 flex items-center justify-center"
+          className="fixed inset-0 z-[100] bg-black bg-opacity-95 flex items-center justify-center"
           onClick={handleZoomClose}
         >
-          <div className="relative max-w-[95vw] max-h-[95vh] overflow-hidden">
+          <div
+            className="relative max-w-[95vw] max-h-[95vh] overflow-auto"
+            onWheel={handleWheelZoom}
+          >
             <img
               src={product.image}
               alt={product.name}
-              className="max-w-full max-h-full object-contain transition-transform duration-200"
+              className="max-w-full max-h-full object-contain transition-transform duration-300 cursor-move"
               style={{ transform: `scale(${imageScale})` }}
               onClick={(e) => e.stopPropagation()}
+              draggable={false}
             />
 
             {/* Zoom Controls */}
-            <div className="absolute top-4 right-4 flex flex-col gap-2">
+            <div className="absolute top-4 right-4 flex flex-col gap-3 bg-black bg-opacity-50 p-2 rounded-lg">
               <Button
                 variant="outline"
                 size="sm"
@@ -347,9 +355,11 @@ const ProductDetailModal = ({
                   e.stopPropagation();
                   handleZoomIn();
                 }}
-                className="bg-white bg-opacity-20 border-white text-white hover:bg-white hover:bg-opacity-30"
+                disabled={imageScale >= 3}
+                className="bg-white bg-opacity-10 border-white text-white hover:bg-white hover:bg-opacity-20 flex items-center gap-2"
               >
-                <Plus size={16} />
+                <ZoomIn size={16} />
+                <span className="text-xs">+</span>
               </Button>
               <Button
                 variant="outline"
@@ -358,10 +368,13 @@ const ProductDetailModal = ({
                   e.stopPropagation();
                   handleZoomOut();
                 }}
-                className="bg-white bg-opacity-20 border-white text-white hover:bg-white hover:bg-opacity-30"
+                disabled={imageScale <= 0.5}
+                className="bg-white bg-opacity-10 border-white text-white hover:bg-white hover:bg-opacity-20 flex items-center gap-2"
               >
-                <Minus size={16} />
+                <ZoomOut size={16} />
+                <span className="text-xs">-</span>
               </Button>
+              <div className="border-t border-white border-opacity-30 my-1"></div>
               <Button
                 variant="outline"
                 size="sm"
@@ -369,15 +382,26 @@ const ProductDetailModal = ({
                   e.stopPropagation();
                   handleZoomClose();
                 }}
-                className="bg-white bg-opacity-20 border-white text-white hover:bg-white hover:bg-opacity-30"
+                className="bg-white bg-opacity-10 border-white text-white hover:bg-white hover:bg-opacity-20"
               >
-                ✕
+                <X size={16} />
               </Button>
             </div>
 
+            {/* Zoom level indicator */}
+            <div className="absolute top-4 left-4 bg-black bg-opacity-50 text-white px-3 py-2 rounded-lg text-sm">
+              Zoom: {Math.round(imageScale * 100)}%
+            </div>
+
             {/* Instructions */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black bg-opacity-50 px-3 py-1 rounded">
-              Click outside to close • Use +/- to zoom • Scale: {imageScale}x
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black bg-opacity-50 px-4 py-2 rounded-lg text-center">
+              <div>
+                Click outside to close • Use + / - buttons or scroll wheel to
+                zoom
+              </div>
+              <div className="text-xs opacity-75 mt-1">
+                Drag or scroll to navigate when zoomed
+              </div>
             </div>
           </div>
         </div>

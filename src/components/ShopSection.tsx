@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -5,10 +6,14 @@ import { Link } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { toast } from "sonner";
+import ProductDetailModal from "@/components/ProductDetailModal";
+import { featuredProducts, Product } from "@/data/products";
 
 const ShopSection = () => {
   const { addToCart, isInCart, removeFromCart } = useCart();
   const { t, language } = useLanguage();
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleAddToCart = (product: any) => {
     addToCart({
@@ -23,57 +28,32 @@ const ShopSection = () => {
     });
   };
 
-  const products = [
-    {
-      id: 1,
-      name: "ŽALIAI BALTAS IKI KAULŲ SMEGENŲ",
-      price: "40€",
-      image:
-        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F67232d5c0e83475b85dd5b6b8a303105",
-      description: "Išskirtinis džemperis tikram žaliai baltam fanui",
-    },
-    {
-      id: 2,
-      name: "ŽALIAI BALTA AISTRA",
-      price: "30€",
-      image:
-        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F24f2a69f231b4aae8bfa77805c61bfbf",
-      description: "Megztinis be kapišonu su žaliai baltos aistros simbolika",
-    },
-    {
-      id: 3,
-      name: "ŽALIAI BALTA AISTRA",
-      price: "20€",
-      image:
-        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F70b772d7fbf5450cb1a854596ac7fed2",
-      description:
-        "Klasikiniai marškinėliai su žaliai baltos aistros simbolika",
-    },
-    {
-      id: 4,
-      name: 'LIPDUKAI "KAUNAS"',
-      price: "5€",
-      image:
-        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F6db430026c15498f8fa146758a4128d0",
-      description: "24 skirtingų lipdukų rinkinys. Atsparūs orui ir vandeniui",
-    },
-    {
-      id: 5,
-      name: 'LIPDUKAI "ŽALGIRIS"',
-      price: "5€",
-      image:
-        "https://cdn.builder.io/api/v1/image/assets%2F36c58a22022c4771b1fc6957762733ab%2F7e1a01af359f4ab4b51ae75e30d36168",
-      description: "24 skirtingų lipdukų rinkinys. Atsparūs orui ir vandeniui",
-    },
-    {
-      id: 6,
-      name: 'LIPDUKAI "2007"',
-      price: "5€",
-      image:
-        "https://cdn.builder.io/api/v1/image/assets%2F7c3fbf4f2c3643cea74a571e035eaddf%2F6db430026c15498f8fa146758a4128d0",
-      description: "Kolekcinis lipdukų rinkinys su 2007 metų simbolika",
-    },
-  ];
+  const handleProductClick = (product: Product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
+
+  const handleCardButtonClick = (e: React.MouseEvent, product: Product) => {
+    e.stopPropagation(); // Prevent card click
+
+    if (product.type === "clothing") {
+      // For clothing, open modal
+      handleProductClick(product);
+    } else {
+      // For non-clothing, direct add to cart
+      if (isInCart(product.id)) {
+        removeFromCart(product.id);
+      } else {
+        handleAddToCart(product);
+      }
+    }
+  };
+
   return (
     <section id="shop" className="py-20 bg-gwb-white">
       <div className="container mx-auto px-4">
@@ -89,25 +69,45 @@ const ShopSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
+          {featuredProducts.map((product) => (
             <Card
               key={product.id}
-              className="bg-gwb-white border-lime-400 border-2 hover:border-gwb-black hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105 group"
+              className="bg-gwb-white border-lime-400 border-2 hover:border-gwb-black hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105 group cursor-pointer"
+              onClick={() => handleProductClick(product)}
             >
               <div className="relative overflow-hidden">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  className={`w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 ${
+                    product.isSoldOut ? "grayscale" : ""
+                  }`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gwb-green/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                {/* Product badges */}
+                {product.isSoldOut && (
+                  <span className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs font-bold rounded">
+                    IŠPARDUOTA
+                  </span>
+                )}
+                {product.isNew && !product.isSoldOut && (
+                  <span className="absolute top-2 left-2 bg-gwb-green text-gwb-black px-2 py-1 text-xs font-bold rounded">
+                    NAUJA
+                  </span>
+                )}
+                {product.isPopular && (
+                  <span className="absolute top-2 right-2 bg-gwb-black text-gwb-white px-2 py-1 text-xs font-bold rounded">
+                    POPULIARU
+                  </span>
+                )}
               </div>
 
               <CardContent className="p-6">
                 <h3 className="font-oswald text-xl font-semibold text-gwb-black mb-2">
                   {product.name}
                 </h3>
-                <p className="text-gwb-black text-sm mb-4">
+                <p className="text-gwb-black text-sm mb-4 line-clamp-2">
                   {product.description}
                 </p>
 
@@ -117,19 +117,26 @@ const ShopSection = () => {
                   </span>
                   <Button
                     size="sm"
-                    onClick={() =>
-                      isInCart(product.id)
-                        ? removeFromCart(product.id)
-                        : handleAddToCart(product)
-                    }
+                    onClick={(e) => handleCardButtonClick(e, product)}
+                    disabled={product.isSoldOut}
                     className={`font-semibold ${
-                      isInCart(product.id)
-                        ? "bg-red-500 hover:bg-red-600 text-white"
-                        : "bg-lime-500 hover:bg-lime-400 text-gwb-white"
+                      product.isSoldOut
+                        ? "bg-gray-400 cursor-not-allowed"
+                        : product.type === "clothing"
+                          ? "bg-gwb-black hover:bg-gwb-black/80 text-gwb-white"
+                          : isInCart(product.id)
+                            ? "bg-red-500 hover:bg-red-600 text-white"
+                            : "bg-lime-500 hover:bg-lime-400 text-gwb-white"
                     }`}
                   >
                     <ShoppingCart size={16} className="mr-2" />
-                    {isInCart(product.id) ? t("remove") : t("buy")}
+                    {product.isSoldOut
+                      ? "IŠPARDUOTA"
+                      : product.type === "clothing"
+                        ? "Pasirinkti"
+                        : isInCart(product.id)
+                          ? t("remove")
+                          : t("buy")}
                   </Button>
                 </div>
               </CardContent>
@@ -151,7 +158,15 @@ const ShopSection = () => {
           </Link>
         </div>
       </div>
+
+      {/* Product Detail Modal */}
+      <ProductDetailModal
+        product={selectedProduct}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </section>
   );
 };
+
 export default ShopSection;
