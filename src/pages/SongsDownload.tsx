@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const SongsDownload = () => {
   const [downloadStarted, setDownloadStarted] = useState(false);
+  const [expandedCards, setExpandedCards] = useState<number[]>([]);
 
   const songCategories = [
     {
@@ -502,7 +503,7 @@ const SongsDownload = () => {
                 <div className="text-center mt-6">
                   <Button className="bg-gwb-black hover:bg-gwb-black/80 text-gwb-white font-semibold">
                     <Download size={16} className="mr-2" />
-                    Atsisiųsti ��į himną
+                    Atsisiųsti šį himną
                   </Button>
                 </div>
               </CardContent>
