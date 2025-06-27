@@ -395,9 +395,12 @@ const ProductDetailModal = ({
 
             {/* Instructions */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black bg-opacity-50 px-4 py-2 rounded-lg text-center">
-              <div>Click outside to close • Use + / - to zoom in/out</div>
+              <div>
+                Click outside to close • Use + / - buttons or scroll wheel to
+                zoom
+              </div>
               <div className="text-xs opacity-75 mt-1">
-                Scroll or drag to navigate when zoomed
+                Drag or scroll to navigate when zoomed
               </div>
             </div>
           </div>
