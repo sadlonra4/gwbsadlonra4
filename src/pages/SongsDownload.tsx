@@ -54,7 +54,7 @@ O ŽALGIRI, JUK TU ŽINAI TAVE MYLIU!`,
         "ŠIANDIEN YRA, MŪSŲ DIENA\nPERGALĖ MUMS RANKA PASIEKIAMA\nSKAMBA LINKSMAI MŪSŲ DAINA\nŽALGIRIO VARDAS MŪSŲ ŠIRDYSE",
       full: `ŠIANDIEN YRA, MŪSŲ DIENA
 PERGALĖ MUMS RANKA PASIEKIAMA
-SKAMBA LINKSMAI M��SŲ DAINA
+SKAMBA LINKSMAI MŪSŲ DAINA
 ŽALGIRIO VARDAS MŪSŲ ŠIRDYSE
 LALALA LAI LALALA LAI (3X)`,
     },
@@ -320,47 +320,71 @@ DAR VIENĄ KARTĄĄĄ! (KARTOJAM)`,
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {chants.map((chant) => {
+              {chants.map((chant, index) => {
                 const isExpanded = expandedCards.includes(chant.id);
+                const isGreenCard = index % 2 === 0; // Alternate green and white cards
+
                 return (
                   <Card
                     key={chant.id}
-                    className="border-2 border-gwb-black hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    className={`border-2 transition-all duration-300 cursor-pointer transform hover:scale-105 ${
+                      isGreenCard
+                        ? "border-gwb-green bg-gradient-to-br from-gwb-green to-green-400 text-white hover:shadow-green-500/25"
+                        : "border-gwb-black bg-white hover:border-gwb-green text-gwb-black hover:shadow-gwb-green/25"
+                    } hover:shadow-xl`}
                     onClick={() => toggleCard(chant.id)}
                   >
                     <CardContent className="p-4">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-oswald text-lg font-bold text-gwb-black">
+                        <h4
+                          className={`font-oswald text-lg font-bold ${
+                            isGreenCard ? "text-white" : "text-gwb-black"
+                          }`}
+                        >
                           {chant.title}
                         </h4>
                         <ChevronDown
                           size={20}
-                          className={`text-gwb-black transition-transform duration-200 ${
+                          className={`transition-transform duration-200 ${
                             isExpanded ? "rotate-180" : ""
-                          }`}
+                          } ${isGreenCard ? "text-white" : "text-gwb-green"}`}
                         />
                       </div>
-                      <p className="text-sm text-gray-600 mb-3">
+                      <p
+                        className={`text-sm mb-3 ${
+                          isGreenCard ? "text-green-100" : "text-gray-600"
+                        }`}
+                      >
                         {chant.description}
                       </p>
 
-                      <div className="bg-gray-50 p-3 rounded text-xs">
+                      <div
+                        className={`p-3 rounded text-xs border ${
+                          isGreenCard
+                            ? "bg-white/20 border-white/30 text-white backdrop-blur-sm"
+                            : "bg-green-50 border-gwb-green/20 text-gwb-black"
+                        }`}
+                      >
                         {isExpanded ? (
-                          <div className="whitespace-pre-line font-mono">
+                          <div className="whitespace-pre-line font-mono leading-relaxed">
                             {chant.full}
                           </div>
                         ) : (
-                          <div className="whitespace-pre-line">
+                          <div className="whitespace-pre-line leading-relaxed">
                             {chant.preview}
                           </div>
                         )}
                       </div>
 
                       <div className="mt-3 text-xs text-center">
-                        <span className="text-gray-500">
-                          {isExpanded
-                            ? "Paspaudėte, kad suskleisti"
-                            : "Paspaudėte, kad išskleisti"}
+                        <span
+                          className={`inline-flex items-center gap-1 px-2 py-1 rounded-full ${
+                            isGreenCard
+                              ? "bg-white/20 text-white"
+                              : "bg-gwb-green/10 text-gwb-green"
+                          }`}
+                        >
+                          {isExpanded ? <>↑ Suskleisti</> : <>↓ Išskleisti</>}
                         </span>
                       </div>
                     </CardContent>
