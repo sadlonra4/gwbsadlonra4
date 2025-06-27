@@ -464,8 +464,14 @@ const Shop = () => {
                         if (product.isSoldOut) return;
 
                         if (product.type === "clothing") {
-                          // For clothing, open modal
-                          handleProductClick(product);
+                          // For clothing, check if in cart first
+                          if (isInCart(product.id)) {
+                            // Remove from cart
+                            removeFromCart(product.id);
+                          } else {
+                            // Open modal to select size/color
+                            handleProductClick(product);
+                          }
                         } else {
                           // For non-clothing, direct add to cart
                           if (isInCart(product.id)) {
@@ -488,7 +494,9 @@ const Shop = () => {
                       {product.isSoldOut
                         ? "IŠPARDUOTA"
                         : product.type === "clothing"
-                          ? "Pasirinkti"
+                          ? isInCart(product.id)
+                            ? "Pašalinti"
+                            : "Pasirinkti"
                           : isInCart(product.id)
                             ? t("remove")
                             : t("buy")}
