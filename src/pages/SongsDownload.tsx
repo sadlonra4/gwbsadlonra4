@@ -491,13 +491,6 @@ IR TIK TADA PAVYKS ŠIANDIENĄ MUMS LAIMĖT!
                 );
               })}
             </div>
-
-            <div className="text-center">
-              <Button className="bg-gwb-black hover:bg-gwb-black/80 text-gwb-white font-semibold text-lg h-11 px-8 py-4">
-                <Download size={24} className="mr-3" />
-                ATSISIŲSTI VISAS SKANDUOTES
-              </Button>
-            </div>
           </div>
 
           {/* Official Anthem Section */}
